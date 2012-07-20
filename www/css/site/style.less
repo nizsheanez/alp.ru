@@ -1,0 +1,124 @@
+@import 'less/bootstrap.less';
+
+.container {
+    width: 1000px;
+}
+
+.main {
+    background: url('/images/top.jpg') no-repeat;
+}
+
+.header {
+    height: 80px;
+    width: 100%;
+}
+
+.top-info {
+    margin: 0 auto;
+    width: 940px;
+
+    .menu {
+        background: url('/images/menu.png') no-repeat;
+        width: 100%;
+        height: 30px;
+        margin: 6px 2px 0 2px;
+    }
+
+    .top_info_wrapper {
+        @height: 293px;
+        height: @height;
+        .man {
+            background: url('/images/man.png');
+            height: @height;
+            width: 637px;
+            float: left;
+            margin: 2px 0 0 2px;
+        }
+
+        .sidebar-top {
+            background: #619f0f;
+            width: 302px;
+            height: @height;
+            margin: 2px 0 0 0;
+
+            .horizontal-divider {
+                background: url(/images/horizontal_divider.png);
+                height: 3px;
+                width: 270px;
+                margin: 2px auto;
+            }
+        }
+
+    }
+
+    .top-menu {
+        height: 126px;
+        li {
+            float: left;
+            display: block;
+            width: 96px;
+            margin: 0 2px;
+
+            a{
+                font-size: 10px;
+                color: #333;
+                text-align: center;
+                line-height: 12px;
+
+                &:hover{
+                    font-weight: bold;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .top-menu-icon-internal(@img, @type: ''){
+            height: 96px;
+            width: 96px;
+            display: block;
+            background: url(/images/@{img}_@{type}.png)
+        }
+        .top-menu-icon(@img){
+            .top-menu-icon-internal(@img);
+            &:hover {
+                .top-menu-icon-internal(@img, 'hover');
+            }
+            &.active {
+                .top-menu-icon-internal(@img, 'active');
+            }
+        }
+        .cleaning span {
+            .top-menu-icon('01');
+        }
+        .fasads span {
+            .top-menu-icon('02');
+        }
+        .crovel span {
+            .top-menu-icon('03');
+        }
+        .media span {
+            .top-menu-icon('04');
+        }
+        .electro span {
+            .top-menu-icon('05');
+        }
+        .light span {
+            .top-menu-icon('06');
+        }
+        .shnow span {
+            .top-menu-icon('07');
+        }
+        .condition span {
+            .top-menu-icon('08');
+        }
+        .private span {
+            .top-menu-icon('09');
+        }
+    }
+}
+
+
+
+
+
+
