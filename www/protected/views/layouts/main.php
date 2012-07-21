@@ -24,13 +24,15 @@
         <div class="phone"><?php echo Setting::getValue('phone') ?></div>
     </div>
     <div class="top-info">
-        <div class="menu"></div>
+        <div class="menu">
+            <?php $this->widget('content.portlets.HeaderMenu') ?>
+        </div>
         <div class="top_info_wrapper">
             <div class="man">
             </div>
             <div class="pull-right sidebar-top">
                 <h3><?= $this->sidebar_top_header ?></h3>
-                <div class="horizontal-divider"></div>
+                <div class="divider"></div>
                 <?= $this->clips['sidebar_top'] ?>
             </div>
         </div>
@@ -39,20 +41,26 @@
         </div>
     </div>
     <div class="content">
-        <div class="pull-left">
+        <div class="content-left">
+            <div class="divider-long"></div>
+            <div class="page-header">
+                <?php echo $this->page_title ?>
+            </div>
+            <div class="divider-long"></div>
             <?php echo $content; ?>
         </div>
-        <div cla qss="pull-right">
+        <div class="pull-right sidebar">
             <?= $this->clips['sidebar'] ?>
         </div>
     </div>
     <footer>
-        <?php $this->widget('BottomMenu'); ?>
+        <div class="statistic">
+            <?php echo Setting::getValue('footer')?>
+        </div>
         <div class="copyright">Copyright © 2011 BSU, Все права защищены.</div>
     </footer>
 
 </div>
-<!-- /container -->
 
 </body>
 </html>
