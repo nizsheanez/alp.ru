@@ -50,7 +50,7 @@
             <?php echo $content; ?>
         </div>
         <div class="pull-right sidebar">
-            <?= $this->clips['sidebar'] ?>
+            <?php echo $this->clips['sidebar'] ?>
         </div>
     </div>
     <footer>

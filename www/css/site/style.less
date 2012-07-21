@@ -31,34 +31,42 @@
         background: url('/images/menu.png') no-repeat;
         width:      100%;
         height:     30px;
-        margin:     6px 2px 0 2px;
+        margin:     8px 3px 0 3px;
         .header-menu-wrapper{
             float:    left;
             position: relative;
             left:     50%;
             ul.header-menu{
-                list-style: none;
-                position:   relative;
-                left:       -50%;
-                height:     30px;
-                vertical-align:center;
-                margin:0;
+                list-style:     none;
+                position:       relative;
+                left:           -50%;
+                height:         30px;
+                vertical-align: center;
+                margin:         0;
                 .divider{
                     background: url(/images/menu_divider.png) no-repeat;
                     height:     30px;
                     width:      2px;
-                    margin:     0 5px;
+                    margin:     0;
+                    padding:    0;
                 }
                 li{
                     float:    left;
                     position: relative; /* For IE */
-                    margin: 0 15px;
+                    padding:  0 15px;
+                    line-height:     26px;
                     a{
                         color:           #3d5665;
                         font-size:       13px;
                         font-weight:     bold;
                         text-decoration: none;
-                        line-height: 30px;
+                    }
+                }
+                li.active{
+                    #gradient > .vertical(#001e3e, #003e60);
+                    border: 2px solid #002d54;
+                    a{
+                        color: #FFF;
                     }
                 }
             }
@@ -68,19 +76,21 @@
     .top_info_wrapper{
         @height: 293px;
         height: @height;
+        margin: 3px 0 0 2px;
         .man{
             background: url('/images/man.png');
             height:     @height;
             width:      637px;
             float:      left;
-            margin:     2px 0 0 2px;
+            margin:     0 0 0 2px;
         }
 
         .sidebar-top{
             background: #619f0f;
-            width:      301px;
+            width:      303px;
             height:     @height;
-            margin:     2px 0 0 0;
+            margin:     0;
+            float: left;
 
             .divider{
                 background: url(/images/horizontal_divider.png);
