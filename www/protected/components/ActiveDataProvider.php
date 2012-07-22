@@ -5,7 +5,7 @@ class ActiveDataProvider extends CActiveDataProvider
 
     public function __construct($modelClass, $config = array())
     {
-        if (!isset($config['pagination']['pageSize']))
+        if (!isset($config['pagination']) || $config['pagination'] !== false)
         {
             if (isset(Yii::app()->session[$modelClass . "PerPage"]) &&
                 Yii::app()->controller instanceof AdminController

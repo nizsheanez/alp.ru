@@ -1,15 +1,20 @@
 @import 'less/bootstrap.less';
 
+.clr{ clear: both; }
 @widthOfSite: 940px;
+@colorDarkBlue: #143956;
+@colorGreen: #4e8425;
+@colorLightBlue: #185fa1;
 
 .container{
     width: 1000px;
 
     .divider-short{
-        background: url(/images/divider_short.png);
-        height:     3px;
+        background: url(/images/divider_short.png) no-repeat;
+        border:     none;
+        height:     1px;
         width:      270px;
-        margin:     2px auto;
+        margin:     0 auto;
     }
 
 }
@@ -51,10 +56,11 @@
                     padding:    0;
                 }
                 li{
-                    float:    left;
-                    position: relative; /* For IE */
-                    padding:  0 15px;
-                    line-height:     26px;
+                    float:       left;
+                    position:    relative; /* For IE */
+                    padding:     0 15px;
+                    line-height: 26px;
+
                     a{
                         color:           #3d5665;
                         font-size:       13px;
@@ -87,10 +93,10 @@
 
         .sidebar-top{
             background: #619f0f;
-            width:      303px;
+            width:      299px;
             height:     @height;
             margin:     0;
-            float: left;
+            float:      left;
 
             .divider{
                 background: url(/images/horizontal_divider.png);
@@ -167,30 +173,49 @@
 
 .content{
     margin: 0 auto;
-    width:  @widthOfSite;
+    width:  @widthOfSite;;
+
     .content-left{
         width: 650px;
-        @colorHBlue: #143956;
-        @colorHGreen: #4e8425;
         .divider-long{
             width:      630px;
             height:     1px;
             background: url(/images/divider_long.png) no-repeat;
             margin:     0 auto;
         }
-        .page-header{
-            margin:      10px 0 0 10px;
-            color:       @colorHBlue;
-            font-size:   22px;
-            font-weight: bold;
-            line-height: 28px;
-            span{
-                color: @colorHGreen;
-            }
+
+    }
+    .page-header{
+        margin:      10px 0 0 10px;
+        color:       @colorDarkBlue;
+        font-size:   22px;
+        font-weight: bold;
+        line-height: 28px;
+        border:      none;
+        span{
+            color: @colorGreen;
         }
     }
 
     .sidebar{
+        width: 290px;
+        .sidebar-content{
+            text-decoration: underline;
+            margin:          10px 0 0 0;
+
+            .news-title{
+                color: @colorDarkBlue;
+            }
+            .news-date{
+                color: @colorLightBlue;
+            }
+            .news-preview{
+                margin: 0 0 30px 0;
+            }
+            .news-more{
+                color: @colorLightBlue;
+            }
+        }
     }
 }
 
@@ -200,5 +225,16 @@ footer{
     width:      100%;
 
     .staticstic{
+    }
+}
+
+//reviews
+#review-list{
+    width: 630px;
+    .review_item{
+        width:      150px;
+        float:      left;
+        text-align: center;
+        margin: 0 28px;
     }
 }

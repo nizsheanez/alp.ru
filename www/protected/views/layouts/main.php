@@ -12,7 +12,8 @@
 
     <?php
     $cs = Yii::app()->clientScript;
-    $cs->registerCssFile(Yii::app()->assetManager->publish(Yii::getPathOfAlias('webroot.css.site') . '/style.less'));
+    $cs->registerCssFile(Yii::app()->assetManager->publish(
+        Yii::getPathOfAlias('webroot.css.site') . '/style.less'));
     $cs->registerCoreScript('jquery');
     $cs->registerScriptFile('/js/site/scripts.js');
     ?>
@@ -28,10 +29,11 @@
             <?php $this->widget('content.portlets.HeaderMenu') ?>
         </div>
         <div class="top_info_wrapper">
-            <div class="man">
+            <div class="pull-left man">
             </div>
-            <div class="pull-right sidebar-top">
+            <div class="pull-left sidebar-top">
                 <h3><?= $this->sidebar_top_header ?></h3>
+
                 <div class="divider"></div>
                 <?= $this->clips['sidebar_top'] ?>
             </div>
@@ -40,8 +42,9 @@
             <?php $this->widget('content.portlets.TopMenu') ?>
         </div>
     </div>
+    <div class="clr"></div>
     <div class="content">
-        <div class="content-left">
+        <div class="pull-left content-left">
             <div class="divider-long"></div>
             <div class="page-header">
                 <?php echo $this->page_title ?>
@@ -49,10 +52,26 @@
             <div class="divider-long"></div>
             <?php echo $content; ?>
         </div>
-        <div class="pull-right sidebar">
-            <?php echo $this->clips['sidebar'] ?>
+        <div class="pull-left sidebar">
+            <div class="divider-short"></div>
+            <div class="page-header">Наши <span>Новости</span></div>
+            <div class="divider-short"></div>
+            <div class="sidebar-content">
+                <?php
+                foreach (News::model()->active()->limit(3)->findAll() as $model)
+                {
+                    echo CHtml::tag('h5', array('class' => 'news-title'), $model->title . ' |');
+                    echo CHtml::tag('div', array('class' => 'news-date'),
+                        date('d.m.Y', strtotime($model->date)));
+                    $tail = CHtml::tag('span', array('class' => 'news-more'), 'фото &raquo;');
+                    echo CHtml::tag('div', array('class' => 'news-preview'),
+                        Yii::app()->text->cut($model->content, 220) . '... ' . $tail);
+                }
+                ?>
+            </div>
         </div>
     </div>
+    <div class="clr"></div>
     <footer>
         <div class="statistic">
             <?php echo Setting::getValue('footer')?>

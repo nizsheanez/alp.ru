@@ -1,9 +1,9 @@
 <?php
-$this->page_title = Yii::t('NewsModule.main', 'Отзывы');
+$this->page_title = Yii::t('NewsModule.main', 'Наш <span>Фотоотчет</span>');
 ?>
-<div class="title">Фото</div>
 <div id="review-list">
     <?php
+
     $this->widget('ListView', array(
         'dataProvider'     => $data_provider,
         'itemView'         => '_view',
@@ -11,9 +11,20 @@ $this->page_title = Yii::t('NewsModule.main', 'Отзывы');
         'enablePagination' => true,
         'summaryText'      => false,
         'ajaxUpdate'       => false,
-        'pager'            => array(
-            'class'   => 'CLinkPager',
-        )
+        'pagerCssClass' => 'pager clr',
+        'pager'            => false
     ));
     ?>
 </div>
+
+<?php
+Yii::app()->clientScript->registerScriptFile('/js/plugins/fancybox/source/jquery.fancybox.js')
+    ->registerCssFile('/js/plugins/fancybox/source/jquery.fancybox.css');
+?>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $(".review_item a").fancybox({openSpeed:'slow',imgPreload:true, closeSpeed:'normal', openEffect:'fade', nextEffect:'fade', prevEffect:'fade'});
+    });
+</script>

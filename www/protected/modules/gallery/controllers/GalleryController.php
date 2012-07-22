@@ -29,17 +29,11 @@ class GalleryController extends BaseController
     public function actionIndex()
     {
         $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
-
         $model         = Gallery::model();
         $data_provider = new ActiveDataProvider(get_class($model), array(
             'criteria'   => $model->published()->ordered()->getDbCriteria(),
             'pagination' => false
         ));
-
-        $this->back_left   = '';
-        $this->back_center = '';
-        $this->cur_link = 'photo';
-
 
         $this->render('index', array(
             'data_provider' => $data_provider
