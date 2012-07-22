@@ -22,7 +22,16 @@
 
 <div class="container main">
     <div class="header">
-        <div class="phone"><?php echo Setting::getValue('phone') ?></div>
+        <div class="logo"></div>
+        <div class="slogan">
+            <?php echo Setting::getValue('slogan') ?>
+        </div>
+        <div class="phones">
+            <div class="phone"><?php echo Setting::getValue('phone1') ?></div>
+            <div class="phone"><?php echo Setting::getValue('phone2') ?></div>
+            <div class="phone"><?php echo Setting::getValue('phone3') ?></div>
+        </div>
+        <div class="phone-icon"></div>
     </div>
     <div class="top-info">
         <div class="menu">
