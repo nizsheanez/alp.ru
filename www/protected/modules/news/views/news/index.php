@@ -1,9 +1,5 @@
-<?php 
+<?php
 $this->page_title = Yii::t('NewsModule.main', 'Новости');
-
-//$this->renderPartial('_list', array('news_list' => $news_list));
-//
-//$this->renderPartial('application.views.layouts.pagination', array('pages' => $pages));
 
 $this->widget('zii.widgets.CListView', array(
     'dataProvider'     => $data_provider,
@@ -11,8 +7,11 @@ $this->widget('zii.widgets.CListView', array(
     'emptyText'        => $this->msg(Yii::t('main', 'ничего не найдено'), 'info'),
     'enablePagination' => true,
     'summaryText'      => false,
+    'htmlOptions'      => array(
+        'class' => 'news-list'
+    ),
     'ajaxUpdate'       => false,
-    'pager' => array(
+    'pager'            => array(
         'class'   => 'CLinkPager',
 
     )

@@ -24,7 +24,7 @@ class NewsController extends BaseController
     {
         $model         = News::model();
         $data_provider = new ActiveDataProvider(get_class($model), array(
-            'criteria' => $model->active()->ordered()->getDbCriteria()
+            'criteria' => $model->active()->last()->getDbCriteria()
         ));
 
         $this->render('index', array(
