@@ -1,4 +1,4 @@
-<?php $this->page_title = $model->title; ?>
+<?php $this->page_title = 'Цены'; ?>
 <div class="category">
     <div class="title">
         <?php echo $model->title ?>

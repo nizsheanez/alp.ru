@@ -167,10 +167,12 @@
         }
 
         .top-menu-icon-internal(@img, @type: ''){
-            height:     96px;
-            width:      96px;
-            display:    block;
-            background: url(/images/@{img}_@{type}.png)
+            span{
+                height:     96px;
+                width:      96px;
+                display:    block;
+                background: url(/images/@{img}_@{type}.png)
+            }
         }
         .top-menu-icon(@img){
             .top-menu-icon-internal(@img);
@@ -181,31 +183,31 @@
                 .top-menu-icon-internal(@img, 'active');
             }
         }
-        .cleaning span{
+        .cleaning{
             .top-menu-icon('01');
         }
-        .fasads span{
+        .fasads{
             .top-menu-icon('02');
         }
-        .crovel span{
+        .crovel{
             .top-menu-icon('03');
         }
-        .media span{
+        .media{
             .top-menu-icon('04');
         }
-        .electro span{
+        .electro{
             .top-menu-icon('05');
         }
-        .light span{
+        .light{
             .top-menu-icon('06');
         }
-        .shnow span{
+        .shnow{
             .top-menu-icon('07');
         }
-        .condition span{
+        .condition{
             .top-menu-icon('08');
         }
-        .private span{
+        .private{
             .top-menu-icon('09');
         }
     }
@@ -257,6 +259,48 @@
             .news-more{
                 color: @colorLightBlue;
             }
+        }
+    }
+
+    .content-internal{
+        margin: 10px 0 0 0;
+    }
+
+    .service{
+        margin: 0 0 0 10px;
+        ul{
+            margin-left: 25px;
+            list-style: none;
+            a{
+                color: #333;
+            }
+        }
+        &>ul>li>div>a{
+            text-transform: uppercase;
+        }
+    }
+
+    .category {
+        .children{
+            ul{
+                margin: 0 0 0 50px;
+                float: left;
+                list-style-image: url(/images/children_icon2.png);
+                a{
+                    text-transform: uppercase;
+                    color: #333;
+                    &.active{
+                        color:#185fa1;
+                    }
+                }
+            }
+        }
+    .icon{
+        margin: 0 15px 10px 0;
+    }
+        .small-title{
+            text-transform: uppercase;
+            text-decoration: underline;
         }
     }
 }

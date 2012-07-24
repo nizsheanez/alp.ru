@@ -59,7 +59,9 @@
                 <?php echo $this->page_title ?>
             </div>
             <div class="divider-long"></div>
-            <?php echo $content; ?>
+            <div class="content-internal">
+                <?php echo $content; ?>
+            </div>
         </div>
         <div class="pull-left sidebar">
             <div class="divider-short"></div>
@@ -81,11 +83,11 @@
         </div>
     </div>
     <div class="clr"></div>
+    <br/>
     <footer>
         <div class="statistic">
             <?php echo Setting::getValue('footer')?>
         </div>
-        <div class="copyright">Copyright © 2011 BSU, Все права защищены.</div>
     </footer>
 
 </div>

@@ -1,4 +1,4 @@
-<div class="title">Цены</div>
+<?php $this->page_title = 'Цены' ?>
 <br/>
     <div class="text">
         <?php echo Page::model()->findByAttributes(array('url'=>'prices'))->getContent(); ?>
