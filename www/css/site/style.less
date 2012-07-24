@@ -36,12 +36,12 @@
         float:      left;
     }
     .slogan{
-        font-size:  19px;
-        float:      left;
-        width:      300px;
-        text-align: right;
-        color: #fff;
-        line-height: 23x;
+        font-size:   19px;
+        float:       left;
+        width:       300px;
+        text-align:  right;
+        color:       #fff;
+        line-height: 23 x;
         h2{
             font-size: 26px;
         }
@@ -244,17 +244,25 @@
     .sidebar{
         width: 290px;
         .sidebar-content{
-            text-decoration: underline;
-            margin:          10px 0 0 0;
+            margin: 10px 0 0 0;
 
-            .news-title{
-                color: @colorDarkBlue;
+            .news-title a{
+                text-decoration: underline;
+                color:           @colorDarkBlue;
             }
-            .news-date{
-                color: @colorLightBlue;
+            .news-date a{
+                text-decoration: underline;
+                color:           @colorLightBlue;
             }
+
             .news-preview{
                 margin: 0 0 30px 0;
+                span{
+                }
+                a{
+                    text-decoration: underline;
+                    color:           @colorDarkBlue;
+                }
             }
             .news-more{
                 color: @colorLightBlue;
@@ -270,7 +278,7 @@
         margin: 0 0 0 10px;
         ul{
             margin-left: 25px;
-            list-style: none;
+            list-style:  none;
             a{
                 color: #333;
             }
@@ -280,26 +288,26 @@
         }
     }
 
-    .category {
+    .category{
         .children{
             ul{
-                margin: 0 0 0 50px;
-                float: left;
+                margin:           0 0 0 50px;
+                float:            left;
                 list-style-image: url(/images/children_icon2.png);
                 a{
                     text-transform: uppercase;
-                    color: #333;
+                    color:          #333;
                     &.active{
-                        color:#185fa1;
+                        color: #185fa1;
                     }
                 }
             }
         }
-    .icon{
-        margin: 0 15px 10px 0;
-    }
+        .icon{
+            margin: 0 15px 10px 0;
+        }
         .small-title{
-            text-transform: uppercase;
+            text-transform:  uppercase;
             text-decoration: underline;
         }
     }

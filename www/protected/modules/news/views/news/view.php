@@ -1,16 +1,3 @@
-<?php
-if ($model->photo)
-{
-    $thumb = ImageHelper::thumb(
-        News::PHOTOS_DIR,
-        $model->photo,
-        News::PHOTO_BIG_WIDTH,
-        null,
-        false
-    );
-}
-?>
-
 <?php if (isset($thumb)): ?>
     <?php echo $thumb; ?>
     <br/>
@@ -22,7 +9,7 @@ if ($model->photo)
 <br clear='all' />
 
 <?php $this->widget('fileManager.portlets.FileList', array(
-    'model' => $news,
+    'model' => $model,
     'tag' => 'files'
 )) ?>
 
