@@ -11,30 +11,12 @@ return array(
             'type'  => 'text',
             'class' => 'big'
         ),
-        'text'  => array('type' => 'application.extensions.tiny_mce.TinyMCE'),
+        'text'  => array('type' => 'editor'),
         'state' => array(
             'type'  => 'dropdownlist',
             'items' => News::$states
         ),
         'date'  => array('type' => 'date'),
-        'meta'  => array(
-            'type'   => 'widget',
-            'widget' => 'MetaTagSubForm'
-        ),
-        'files' => array(
-            'type'      => 'file_manager',
-            'data_type' => 'any',
-            'title'     => 'Файлы',
-            'tag'       => 'any'
-        ),
-        'roles' => array(
-            'type'  => 'multi_select',
-            'items' => array(
-                '1'=> 1,
-                '3'=> 4
-            )
-        ),
-
     ),
     'buttons'    => array(
         'submit' => array(

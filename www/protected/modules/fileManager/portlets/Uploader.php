@@ -2,7 +2,7 @@
 
 Yii::import('zii.widgets.jui.CJuiWidget');
 
-class Uploader extends CJuiWidget
+class Uploader extends JuiInputWidget
 {
     public $model;
     public $id;

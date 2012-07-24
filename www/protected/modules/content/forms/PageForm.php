@@ -15,11 +15,8 @@ return array(
         'title'        => array('type' => 'text'),
         'url'          => array('type' => 'text'),
         'text'         => array('type' => 'editor'),
-        'back_left'    => array('type' => 'file'),
-        'back_center'  => array('type' => 'file'),
         'is_published' => array('type' => 'checkbox'),
-        'meta_tags'    => array('type' => 'MetaTags'),
-//        'meta_tags'    => array('type' => 'MetaTags')
+//        'meta_tags'    => array('type' => 'MetaTags'),
     ),
     'buttons'   => array(
         'submit' => array(

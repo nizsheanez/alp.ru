@@ -17,8 +17,6 @@ $this->widget('AdminGrid', array(
 		),
 		array('name' => 'state', 'value' => 'News::$states[$data->state]'),
 		'date',
-        'date_create',
-        array('name' => 'lang', 'value' => '$data->language->name'),
 		array(
 			'class'=>'CButtonColumn',
 		),

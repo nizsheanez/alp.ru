@@ -50,7 +50,7 @@ Yii::import('zii.widgets.CBaseListView');
  * By doing so, a list of hyperlinks that can sort the data will be displayed.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
- * @version $Id: CListView.php 3083 2011-03-14 18:09:55Z qiang.xue $
+ * @version $Id: CListView.php 3286 2011-06-16 17:34:34Z qiang.xue $
  * @package zii.widgets
  * @since 1.1
  */
@@ -130,6 +130,12 @@ class CListView extends CBaseListView
 	 */
 	public $ajaxVar='ajax';
 	/**
+	 * @var mixed the URL for the AJAX requests should be sent to. {@link CHtml::normalizeUrl()} will be
+	 * called on this property. If not set, the current page URL will be used for AJAX requests.
+	 * @since 1.1.8
+	 */
+	public $ajaxUrl;
+	/**
 	 * @var string a javascript function that will be invoked before an AJAX update occurs.
 	 * The function signature is <code>function(id)</code> where 'id' refers to the ID of the list view.
 	 */
@@ -198,6 +204,8 @@ class CListView extends CBaseListView
 			'loadingClass'=>$this->loadingCssClass,
 			'sorterClass'=>$this->sorterCssClass,
 		);
+		if($this->ajaxUrl!==null)
+			$options['url']=CHtml::normalizeUrl($this->ajaxUrl);
 		if($this->updateSelector!==null)
 			$options['updateSelector']=$this->updateSelector;
 		if($this->beforeAjaxUpdate!==null)
@@ -223,15 +231,15 @@ class CListView extends CBaseListView
 		if(($n=count($data))>0)
 		{
 			$owner=$this->getOwner();
-			$render=$owner instanceof CController ? 'renderPartial' : 'render';
 			$j=0;
+            $viewFile = $owner->getViewFile($this->itemView);
 			foreach($data as $i=>$item)
 			{
 				$data=$this->viewData;
 				$data['index']=$i;
 				$data['data']=$item;
 				$data['widget']=$this;
-				$owner->$render($this->itemView,$data);
+                $owner->renderFile($viewFile,$data);
 				if($j++ < $n-1)
 					echo $this->separator;
 			}

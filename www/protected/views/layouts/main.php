@@ -18,8 +18,8 @@
     $cs->registerScriptFile('/js/site/scripts.js');
     ?>
 </head>
-<!--<body oncontextmenu="return false" oncopy="return false" ondragstart="return false">-->
-<body>
+<body oncontextmenu="return false" oncopy="return false" ondragstart="return false">
+<!--<body>-->
 
 <div class="container main">
     <div class="header">

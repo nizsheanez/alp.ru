@@ -50,8 +50,8 @@ class MainModule extends WebModule
         return array(
 //            'Мета-теги'         => '/main/MetaTagAdmin/manage',
 //            'Добавить мета-тег' => '/main/MetaTagAdmin/create',
-			'Логирование'       => '/main/logAdmin/manage',
-			'Действия сайта'    => '/main/SiteActionAdmin/manage',
+//			'Логирование'       => '/main/logAdmin/manage',
+//			'Действия сайта'    => '/main/SiteActionAdmin/manage',
 //			'Обратная связь'    => '/main/feedbackAdmin/manage',
 //			'Языки'             => '/main/LanguageAdmin/manage',
 //			'Добавить язык'     => '/main/LanguageAdmin/create',
