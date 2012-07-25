@@ -21,16 +21,6 @@ return array(
         ),
         'title' => array('type' => 'text'),
         'url'   => array('type' => 'text'),
-        'user_role'  => array(
-        	'type'   => 'dropdownlist', 
-        	'items'  => $roles,
-        	'prompt' => 'не указано' 
-        ),
-        'not_user_role'  => array(
-        	'type'   => 'dropdownlist', 
-        	'items'  => $roles,
-        	'prompt' => 'не указано' 
-        ),        
         'order' => array('type' => 'text', 'maxlength' => 3, 'class' => 'small'),
         'is_visible' => array('type' => 'checkbox'),
     ),

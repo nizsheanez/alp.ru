@@ -12,18 +12,13 @@ class BaseForm extends CForm
     );
 
     public $defaultActiveFormSettings = array(
-        'class' => 'BootActiveForm',
+        'class' => 'CActiveForm',
         'enableAjaxValidation'=>true,
         'clientOptions' => array(
             'validateOnType' => true,
             'validateOnSubmit' => true,
-            'afterValidateAttribute' => 'js:function(form, attribute, data, hasError){
-                        var cg = $("#"+attribute.inputID).closest(".control-group");
-                        hasError ? cg.addClass("error") : cg.removeClass("error");
-                        hasError ? cg.removeClass("success") : cg.addClass("success");
-                    }',
-        'inlineErrors' => false,
-    ));
+        )
+    );
 
 
     public function __construct($config, $model = null, $parent = null)
