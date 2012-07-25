@@ -2,15 +2,10 @@
 $elements = array(
     'is_published' => array('type' => 'checkbox'),
     'title'        => array('type' => 'text'),
-    'alias'        => array('type' => 'alias', 'source' => 'title', 'hint' => 'Этот параметр будет использован для построения красивого URL. Он генерируется на основании названия, однако до сохранения его можно изменить. После сохранения изменить значение этого поля будет невозможно.'),
+    'alias'        => array('type' => 'alias', 'source' => 'title'),
     'icon'         => array('type' => 'file'),
     'text'         => array('type' => 'editor'),
     'for_price'    => array('type' => 'editor'),
-    'back_center'  => array('type' => 'file'),
-    'back_left'    => array('type' => 'file'),
-    'meta'       => array(
-        'type'   => 'MetaTags'
-    ),
 );
 if ($this->model->is_system)
 {

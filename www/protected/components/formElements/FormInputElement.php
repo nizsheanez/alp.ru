@@ -6,7 +6,6 @@ class FormInputElement extends CFormInputElement
 
     public $widgets = array(
         'alias'             => 'AliasField',
-        'file'              => 'FileWidget',
         'captcha'           => 'Captcha',
         'chosen'            => 'Chosen',
         'all_in_one_input'  => 'AllInOneInput',
