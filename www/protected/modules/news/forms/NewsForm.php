@@ -17,6 +17,7 @@ return array(
             'items' => News::$states
         ),
         'date'  => array('type' => 'date'),
+                'meta_tags'    => array('type' => 'MetaTags'),
     ),
     'buttons'    => array(
         'submit' => array(

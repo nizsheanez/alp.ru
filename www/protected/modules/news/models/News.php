@@ -90,9 +90,7 @@ public $roles;
             ),
             array(
                 'date',
-                'type',
-                'type'       => 'date',
-                'dateFormat' => 'dd.mm.yyyy'
+                'safe',
             ),
             array(
                 'title',
