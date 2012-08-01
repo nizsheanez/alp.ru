@@ -23,20 +23,21 @@ class CategoryController extends BaseController
 
     public function actionPrices()
     {
-        $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
         $this->cur_link = 'price';
-        $this->render('prices', array('html' => Category::getHtmlTree(false, 1)));
+        $page = Page::model()->findByAttributes(array('url'=>'prices'));
+        $this->render('prices', array('html' => Category::getHtmlTree(false, 1), 'page' => $page));
     }
 
 
     public function actionPrice($id = null, $alias = null)
     {
-        $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
-        $this->cur_link = 'price';
         $model = $category = $this->loadModel($alias ? $alias : $id, array('published'), $alias ? 'alias' : null);
 
-        $this->cur_chapter = $model->alias;
+        $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
+        $this->cur_link = 'price';
         $this->clips['sidebar_top'] = $model->sidebar_top;
+
+        $this->cur_chapter = $model->alias;
 
         $this->render('price', array(
             'model' => $category
@@ -48,6 +49,7 @@ class CategoryController extends BaseController
     {
         $model = $category = $this->loadModel($alias ? $alias : $id, array('published'), $alias ? 'alias' : null);
 
+        $this->setMetaTags($model);
         $this->cur_chapter = $model->alias;
         $this->clips['sidebar_top'] = $model->sidebar_top;
 
@@ -55,7 +57,6 @@ class CategoryController extends BaseController
             'model' => $category
         ));
     }
-
 
     public function actionIndex()
     {

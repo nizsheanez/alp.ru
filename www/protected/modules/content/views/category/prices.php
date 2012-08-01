@@ -1,7 +1,9 @@
-<?php $this->page_title = 'Цены' ?>
+<?php
+    $this->page_title = 'Цены';
+?>
 <br/>
     <div class="text">
-        <?php echo Page::model()->findByAttributes(array('url'=>'prices'))->getContent(); ?>
+        <?php echo $page->getContent(); ?>
     </div>
 <br/>
 
