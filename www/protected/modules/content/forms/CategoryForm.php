@@ -6,6 +6,8 @@ $elements = array(
     'icon'         => array('type' => 'file'),
     'text'         => array('type' => 'editor'),
     'for_price'    => array('type' => 'editor'),
+    'sidebar_top'  => array('type' => 'editor'),
+    'meta_tags'    => array('type' => 'MetaTags'),
 );
 if ($this->model->is_system)
 {

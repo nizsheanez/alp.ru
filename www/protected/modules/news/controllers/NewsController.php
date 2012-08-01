@@ -14,6 +14,8 @@ class NewsController extends BaseController
 
     public function actionView($id)
     {
+        $this->clips['sidebar_top'] = Setting::getValue('news_sidebar_top');
+
         $this->render('view', array(
             'model'      => $this->loadModel($id, array('active'))
         ));
@@ -26,6 +28,8 @@ class NewsController extends BaseController
         $data_provider = new ActiveDataProvider(get_class($model), array(
             'criteria' => $model->active()->last()->getDbCriteria()
         ));
+
+        $this->clips['sidebar_top'] = Setting::getValue('news_sidebar_top');
 
         $this->render('index', array(
             'data_provider' => $data_provider

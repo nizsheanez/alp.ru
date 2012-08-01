@@ -14,9 +14,8 @@ class GalleryController extends BaseController
 
     public function actionView($id)
     {
-        $this->back_left   = '';
-        $this->back_center = '';
         $this->cur_link = 'photo';
+        $this->clips['sidebar_top'] = Setting::getValue('gallery_sidebar_top');
 
         $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
 
@@ -34,6 +33,9 @@ class GalleryController extends BaseController
             'criteria'   => $model->published()->ordered()->getDbCriteria(),
             'pagination' => false
         ));
+
+        $this->cur_link = 'photo';
+        $this->clips['sidebar_top'] = Setting::getValue('gallery_sidebar_top');
 
         $this->render('index', array(
             'data_provider' => $data_provider

@@ -32,9 +32,8 @@ class PageController extends BaseController
             }
         }
 
-        $this->back_left = $page->getBackLeft();
-        $this->back_center = $page->getBackCenter();
         $this->cur_link = $page->url;
+        $this->clips['sidebar_top'] = $page->sidebar_top;
         $this->render("view", array("page" => $page));
     }
 
@@ -49,8 +48,7 @@ class PageController extends BaseController
             return;
         }
 
-        $this->back_left = $page->getBackLeft();
-        $this->back_center = $page->getBackCenter();
+        $this->clips['sidebar_top'] = $page->sidebar_top;
 
         $this->render('view', array('page' => $page));
     }  

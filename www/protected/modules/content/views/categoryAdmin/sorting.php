@@ -7,7 +7,7 @@ $this->tabs = array(
     $this->t('admin', 'create')  => $this->url("create", array('parent_id'=>1)),
 );
 
-$this->widget('products.portlets.NestedTree', array(
+$this->widget('content.portlets.NestedTree', array(
     'model'    => Category::model(),
     'sortable' => true,
     'id'       => 'category_sorting'

@@ -42,9 +42,7 @@
             <div class="pull-left man">
             </div>
             <div class="pull-left sidebar-top">
-                <h3><?= $this->sidebar_top_header ?></h3>
-
-                <div class="divider"></div>
+<!--                <div class="divider"></div>-->
                 <?= $this->clips['sidebar_top'] ?>
             </div>
         </div>

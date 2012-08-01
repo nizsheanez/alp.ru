@@ -36,8 +36,7 @@ class CategoryController extends BaseController
         $model = $category = $this->loadModel($alias ? $alias : $id, array('published'), $alias ? 'alias' : null);
 
         $this->cur_chapter = $model->alias;
-        $this->back_center = $model->getBackCenter();
-        $this->back_left   = $model->getBackLeft();
+        $this->clips['sidebar_top'] = $model->sidebar_top;
 
         $this->render('price', array(
             'model' => $category
@@ -50,8 +49,7 @@ class CategoryController extends BaseController
         $model = $category = $this->loadModel($alias ? $alias : $id, array('published'), $alias ? 'alias' : null);
 
         $this->cur_chapter = $model->alias;
-        $this->back_center = $model->getBackCenter();
-        $this->back_left   = $model->getBackLeft();
+        $this->clips['sidebar_top'] = $model->sidebar_top;
 
         $this->render('view', array(
             'model' => $category

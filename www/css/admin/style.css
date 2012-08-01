@@ -628,7 +628,7 @@ a:hover {
     border-right: 1px solid #ccc;
 }
 
-.block.small .block_content input.text,
+.block.small .block_content .text input,
 .block.small .block_content textarea {
     width: 96%;
     padding: 7px;

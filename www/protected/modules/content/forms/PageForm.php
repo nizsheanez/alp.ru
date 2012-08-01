@@ -15,6 +15,7 @@ return array(
         'title'        => array('type' => 'text'),
         'url'          => array('type' => 'text'),
         'text'         => array('type' => 'editor'),
+        'sidebar_top'  => array('type' => 'editor'),
         'is_published' => array('type' => 'checkbox'),
         'meta_tags'    => array('type' => 'MetaTags'),
     ),

@@ -25,7 +25,7 @@ select.chzn{
     width:     500px
 }
 
-input.text{
+.text input{
     width:                 410px;
     background:            #fefefe;
     border:                1px solid #bbb;
@@ -40,15 +40,15 @@ input.text{
     vertical-align:        middle;
 }
 
-input.text.medium{
+.text.medium input{
     width: 600px;
 }
 
-input.text.big{
+.text.big input{
     width: 98%;
 }
 
-input.text.date_picker{
+.date input{
     width:         100px;
     padding-right: 36px;
     cursor:        pointer;
