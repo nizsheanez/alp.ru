@@ -188,6 +188,26 @@ abstract class ActiveRecordModel extends CActiveRecord
     }
 
 
+    public function group($group)
+    {
+        $alias = $this->getTableAlias();
+        $res = array();
+        foreach (explode(',', $group) as $item)
+        {
+            $i = trim($item);
+            if (strpos($i, '.') === false && strpos($i, '(') === false)
+            {
+                $i = $alias.'.'.$i;
+            }
+            $res[] = $i;
+        }
+        $this->getDbCriteria()->mergeWith(array(
+            'group' => implode(', ', $res),
+        ));
+        return $this;
+    }
+
+
     public function last()
     {
         $alias = $this->getTableAlias();
