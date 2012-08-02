@@ -12,6 +12,7 @@ return array(
             'type'  => 'text',
             'class' => 'big'
         ),
+        'date' => array('type' => 'date'),
         'files'        => array(
             'type'      => 'file_manager',
             'data_type' => 'any',

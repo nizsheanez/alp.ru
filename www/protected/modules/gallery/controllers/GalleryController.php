@@ -30,9 +30,9 @@ class GalleryController extends BaseController
         $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
         $model         = Gallery::model();
         $data_provider = new ActiveDataProvider(get_class($model), array(
-            'criteria'   => $model->published()->ordered()->getDbCriteria(),
-            'pagination' => false
+            'criteria'   => $model->published()->ordered()->getDbCriteria()
         ));
+        $data_provider->setPagination(new YearPagination());
 
         $this->cur_link = 'photo';
         $this->clips['sidebar_top'] = Setting::getValue('gallery_sidebar_top');

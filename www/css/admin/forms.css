@@ -25,7 +25,7 @@ select.chzn{
     width:     500px
 }
 
-.text input{
+.text input, .date input{
     width:                 410px;
     background:            #fefefe;
     border:                1px solid #bbb;
