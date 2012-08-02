@@ -256,7 +256,8 @@
                 color:           @colorDarkBlue;
             }
             .news-date a{
-                text-decoration: underline;
+                text-decoration: none;
+                cursor: pointer;
                 color:           @colorLightBlue;
             }
 
@@ -265,11 +266,13 @@
                 span{
                 }
                 a{
-                    text-decoration: underline;
+                    cursor: pointer;
+                    text-decoration: none;
                     color:           @colorDarkBlue;
                 }
             }
             .news-more{
+                cursor: pointer;
                 color: @colorLightBlue;
             }
         }
@@ -277,6 +280,10 @@
 
     .content-internal{
         margin: 10px 0 0 0;
+        a{
+            font-weight: bold;
+            text-decoration: underline;
+        }
     }
 
     .service{
@@ -299,9 +306,14 @@
                 margin:           0 0 0 50px;
                 float:            left;
                 list-style-image: url(/images/children_icon2.png);
+                li{
+                    width: 280px;
+                    float: left;
+                }
                 a{
                     text-transform: uppercase;
-                    color:          #333;
+                    color:          #555;
+                    font-weight: bold;
                     &.active{
                         color: #185fa1;
                     }
@@ -335,6 +347,14 @@ footer{
         float:      left;
         text-align: center;
         margin:     0 28px;
+        img{
+            border: 1px solid #999;
+            .border-radius(4px);
+            padding: 2px;
+        }
+    }
+    .img_title{
+        margin: 5px 0 0 0;
     }
 }
 
@@ -352,5 +372,17 @@ footer{
     .dashed-divider{
         margin:        10px 0;
         border-bottom: 1px dashed #999;
+    }
+}
+
+.year-pager{
+    list-style: none;
+    float:left;
+    margin: 15px 0 0 0;
+    li{
+        display: block;
+        a{
+            color: @colorDarkBlue;
+        }
     }
 }

@@ -32,7 +32,9 @@ class GalleryController extends BaseController
         $data_provider = new ActiveDataProvider(get_class($model), array(
             'criteria'   => $model->published()->ordered()->getDbCriteria()
         ));
-        $data_provider->setPagination(new YearPagination());
+        $pagination = new YearPagination();
+        $pagination->model = $model;
+        $data_provider->setPagination($pagination);
 
         $this->cur_link = 'photo';
         $this->clips['sidebar_top'] = Setting::getValue('gallery_sidebar_top');

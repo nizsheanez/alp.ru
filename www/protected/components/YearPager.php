@@ -3,6 +3,9 @@ class YearPager extends CLinkPager
 {
     public $cssFile = false;
     public $header = false;
+    public $htmlOptions=array(
+        'class' => 'year-pager'
+    );
 
     protected function createPageButtons()
     {
@@ -31,6 +34,14 @@ class YearPager extends CLinkPager
     {
         if($hidden || $selected)
             $class.=' '.($hidden ? self::CSS_HIDDEN_PAGE : self::CSS_SELECTED_PAGE);
-        return '<li class="'.$class.'">'.CHtml::link('Новости за '.$label.' год',$this->createPageUrl($page)).'</li>';
+        if ($this->pages->model instanceof News)
+        {
+            $label = 'Новости за '.$label.' год';
+        }
+        elseif($this->pages->model instanceof Gallery)
+        {
+            $label = 'Фотографии за '.$label.' год';
+        }
+        return '<li class="'.$class.'">'.CHtml::link($label,$this->createPageUrl($page)).'</li>';
     }
 }

@@ -1,10 +1,11 @@
 <?php
 class YearPagination extends CPagination
 {
+    public $model;
 
     public function getPageCount()
     {
-        return (int)News::model()->active()->group('YEAR(date)')->count();
+        return (int)$this->model->model()->active()->group('YEAR(date)')->count();
     }
 
     public function applyLimit($criteria)

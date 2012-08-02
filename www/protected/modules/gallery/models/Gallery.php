@@ -6,8 +6,8 @@ class Gallery extends ActiveRecordModel
 
     const PHOTOS_DIR = 'upload/gallery';
 
-    const STATE_ACTIVE = 'active';
-    const STATE_HIDDEN = 'hidden';
+    const STATE_ACTIVE = '1';
+    const STATE_HIDDEN = '0';
 
     const PHOTO_SMALL_WIDTH  = "230";
     const PHOTO_SMALL_HEIGHT = "200";
@@ -52,7 +52,8 @@ class Gallery extends ActiveRecordModel
     public function scopes()
     {
         return array(
-            'active' => array('condition' => "state = '" . self::STATE_ACTIVE . "'")
+            'last'   => array('order' => 'date DESC'),
+            'active' => array('condition' => "is_published = '" . self::STATE_ACTIVE . "'")
         );
     }
 
@@ -74,7 +75,7 @@ class Gallery extends ActiveRecordModel
             array(
                 'title, is_published', 'required'
             ), array(
-                'meta_tags, roles', 'safe',
+                'meta_tags, roles, date', 'safe',
                 'on' => array(
                     self::SCENARIO_CREATE, self::SCENARIO_UPDATE
                 )
