@@ -147,7 +147,7 @@ class Category extends ActiveRecordModel
             $res .= CHtml::openTag('li', array(
                 'id'   => 'items_' . $item->id,
             ));
-            $res .= CHtml::tag('div', array(), CHtml::link($item->title, $a ? $item->href : $item->priceHref, array(
+            $res .= CHtml::tag('div', array(), CHtml::link(strip_tags($item->title), $a ? $item->href : $item->priceHref, array(
                 'class' => 'depth_' . $item->depth
             )));
             $depth = $item->depth;
