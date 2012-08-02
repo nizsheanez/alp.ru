@@ -1,7 +1,7 @@
 <?php $this->page_title = 'Цены'; ?>
 <div class="category">
     <div class="title">
-        <?php echo $model->title ?>
+        <?php echo strip_tags($model->title) ?>
     </div>
     <br/>
     <br/>

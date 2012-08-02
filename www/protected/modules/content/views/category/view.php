@@ -1,4 +1,4 @@
-<?php $this->page_title = 'Наши <span>Услуги</span>'; ?>
+<?php $this->page_title = $model->title; ?>
 <div class="category">
     <div class="details">
         <div class="text">
@@ -9,7 +9,7 @@
                     <?php
                     if ($model->icon)
                     {
-                        echo ImageHelper::thumb(Category::UPLOAD_PATH, $model->icon, 153, 104, false, 'class="icon" align="left"');
+                        echo ImageHelper::thumb(Category::UPLOAD_PATH, $model->icon, 220, 200, false, 'class="icon" align="left"');
                     } ?>
             </div>
             <p class="small-title">

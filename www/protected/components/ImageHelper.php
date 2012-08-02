@@ -36,8 +36,7 @@ class ImageHelper
 		$thumb_path = $dir . $thumb_name;
 		
 		$file_path = $dir . $file; 
-		
-		if (!file_exists($thumb_path)) 
+		if (!file_exists($thumb_path))
 		{
 			if (!file_exists($file_path)) 
 			{   
@@ -78,9 +77,8 @@ class ImageHelper
 
             @chmod($thumb_path, 0777);
 		}
-		
 		$thumb_path = str_replace($_SERVER["DOCUMENT_ROOT"], "", $thumb_path);
-		
+
 		if (substr($thumb_path, 0, 1) != "/") 
 		{
 			$thumb_path = "/" . $thumb_path;	

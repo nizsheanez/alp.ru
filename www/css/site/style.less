@@ -41,7 +41,7 @@
         width:       300px;
         text-align:  right;
         color:       #fff;
-        line-height: 23 x;
+        line-height: 23px;
         h2{
             font-size: 26px;
         }
@@ -51,10 +51,12 @@
     }
     .phones{
         float:       right;
-        font-size:   16px;
+        font-size:   18px;
+        line-height: 20px;
+        font-family: Verdana;
         color:       #fff;
         font-weight: bold;
-        margin:      25px 50px 0 0;
+        margin:      20px 50px 0 0;
         span{
             color: @colorLightGreen;
         }
@@ -98,8 +100,9 @@
                 li{
                     float:       left;
                     position:    relative; /* For IE */
-                    padding:     0 15px;
-                    line-height: 26px;
+                    padding:     2px 15px;
+                    line-height: 25px;
+                    margin: 0 1px 0 0;
 
                     a{
                         color:           #3d5665;
@@ -111,6 +114,7 @@
                 li.active{
                     #gradient > .vertical(#001e3e, #003e60);
                     border: 2px solid #002d54;
+                    padding: 0 13px;
                     a{
                         color: #FFF;
                     }
@@ -147,17 +151,18 @@
 
     .top-menu{
         height: 126px;
+        margin: 10px 0 0 4px;
         li{
             float:   left;
             display: block;
             width:   96px;
-            margin:  0 2px;
+            margin:  0 4px;
 
             a{
-                font-size:   10px;
+                font-size:   11px;
                 color:       #333;
                 text-align:  center;
-                line-height: 12px;
+                line-height: 18px;
 
                 &:hover{
                     font-weight:     bold;
@@ -201,7 +206,7 @@
         .light{
             .top-menu-icon('06');
         }
-        .shnow{
+        .snow{
             .top-menu-icon('07');
         }
         .condition{
@@ -232,7 +237,7 @@
     .page-header{
         margin:      10px 0 0 10px;
         color:       @colorDarkBlue;
-        font-size:   22px;
+        font-size:   20px;
         font-weight: bold;
         line-height: 28px;
         border:      none;
@@ -304,7 +309,7 @@
             }
         }
         .icon{
-            margin: 0 15px 10px 0;
+            margin: 0 20px 10px 0;
         }
         .small-title{
             text-transform:  uppercase;
