@@ -70,16 +70,11 @@
                 <?php
                 foreach (News::model()->active()->limit(3)->findAll() as $model)
                 {
-                    $title = CHtml::link($model->title . ' |', $model->getUrl());
+                    $title = $model->title . ' |' ;
                     echo CHtml::tag('h5', array('class' => 'news-title'), $title);
-                    $date = CHtml::link(date('d.m.Y', strtotime($model->date)), $model->getUrl());
+                    $date = date('d.m.Y', strtotime($model->date));
                     echo CHtml::tag('div', array('class' => 'news-date'), $date);
-                    $tail    = CHtml::tag('span', array('class' => 'news-more'), 'фото &raquo;');
-                    $content = Yii::app()->text->cut($model->content, 220) . '...';
-                    $tail    = CHtml::link($tail, $model->getUrl());
-                    $link    = CHtml::link($content, $model->getUrl()) . '<span>&nbsp;</span>' . $tail;
-
-                    echo CHtml::tag('div', array('class' => 'news-preview'), $link);
+                    echo CHtml::tag('div', array('class' => 'news-preview'), $model->content);
                 }
                 ?>
             </div>
