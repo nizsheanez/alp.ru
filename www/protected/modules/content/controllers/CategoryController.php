@@ -32,12 +32,10 @@ class CategoryController extends BaseController
     public function actionPrice($id = null, $alias = null)
     {
         $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
-        $this->cur_link = 'price';
+        $this->cur_link = '/prices';
         $model = $category = $this->loadModel($alias ? $alias : $id, array('published'), $alias ? 'alias' : null);
 
         $this->cur_chapter = $model->alias;
-        $this->back_center = $model->getBackCenter();
-        $this->back_left   = $model->getBackLeft();
 
         $this->render('price', array(
             'model' => $category
@@ -50,8 +48,6 @@ class CategoryController extends BaseController
         $model = $category = $this->loadModel($alias ? $alias : $id, array('published'), $alias ? 'alias' : null);
 
         $this->cur_chapter = $model->alias;
-        $this->back_center = $model->getBackCenter();
-        $this->back_left   = $model->getBackLeft();
 
         $this->render('view', array(
             'model' => $category

@@ -40,7 +40,7 @@ class Category extends ActiveRecordModel
     {
         return array(
             array(
-                'title, icon', 'length',
+                'title, icon, alias', 'length',
                 'max' => 250
             ), array(
                 'title', 'required'

@@ -24,9 +24,7 @@
 <div class="container main">
     <div class="header">
         <div class="logo"></div>
-        <div class="slogan">
-            <?php echo Setting::getValue('slogan') ?>
-        </div>
+        <div class="slogan"></div>
         <div class="phones">
             <div class="phone"><?php echo Setting::getValue('phone1') ?></div>
             <div class="phone"><?php echo Setting::getValue('phone2') ?></div>

@@ -21,7 +21,7 @@
 }
 
 .main{
-    background: url('/images/top.jpg') no-repeat;
+    background: url('/images/top.png') no-repeat;
 }
 
 .header{
@@ -29,25 +29,17 @@
     width:  100%;
 
     .logo{
-        margin:     5px 0 0 40px;
+        margin:     0 0 0 40px;
         background: url(/images/logo.png) no-repeat;
         width:      80px;
         height:     80px;
         float:      left;
     }
     .slogan{
-        font-size:   19px;
+        background: url(/images/logo_text.png);
         float:       left;
-        width:       300px;
-        text-align:  right;
-        color:       #fff;
-        line-height: 23 x;
-        h2{
-            font-size: 26px;
-        }
-        span{
-            color: @colorLightGreen;
-        }
+        width:       315px;
+        height:       80px;
     }
     .phones{
         float:       right;
@@ -75,8 +67,8 @@
     .menu{
         background: url('/images/menu.png') no-repeat;
         width:      100%;
-        height:     30px;
-        margin:     8px 3px 0 3px;
+        height:     36px;
+        margin:     6px 2px 0 2px;
         .header-menu-wrapper{
             float:    left;
             position: relative;
@@ -85,32 +77,36 @@
                 list-style:     none;
                 position:       relative;
                 left:           -50%;
-                height:         30px;
+                height:         36px;
                 vertical-align: center;
                 margin:         0;
                 .divider{
                     background: url(/images/menu_divider.png) no-repeat;
                     height:     30px;
                     width:      2px;
-                    margin:     0;
+                    margin:     2px 0 0 0;
                     padding:    0;
                 }
                 li{
                     float:       left;
                     position:    relative; /* For IE */
                     padding:     0 15px;
-                    line-height: 26px;
+                    margin:      1px 0 0 0;
+                    line-height: 34px;
 
                     a{
+                        height:          29px;
                         color:           #3d5665;
                         font-size:       13px;
                         font-weight:     bold;
                         text-decoration: none;
+                        display: block;
                     }
                 }
                 li.active{
-                    #gradient > .vertical(#001e3e, #003e60);
+                    background: url(/images/menu_active.png) repeat-x;
                     border: 2px solid #002d54;
+                    line-height: 30px;
                     a{
                         color: #FFF;
                     }
@@ -122,7 +118,7 @@
     .top_info_wrapper{
         @height: 293px;
         height: @height;
-        margin: 3px 0 0 2px;
+        margin: 3px 0 0 1px;
         .man{
             background: url('/images/man.png');
             height:     @height;
@@ -132,8 +128,8 @@
         }
 
         .sidebar-top{
-            background: #619f0f;
-            width:      299px;
+            background: url(/images/sidebar-top.png);
+            width:      300px;
             height:     @height;
             margin:     0;
             float:      left;
