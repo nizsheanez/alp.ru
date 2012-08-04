@@ -124,17 +124,22 @@ abstract class BaseController extends CController
 
         if ($model)
         {
-            $meta_tag = MetaTag::model()->findByAttributes(array(
-                'model_id'  => $this->getModelClass(),
-                'object_id' => $model->id
-            ));
+            $this->setMetaTags($model);
+        }
+    }
 
-            if ($meta_tag)
-            {
-                $this->meta_title       = $meta_tag->title;
-                $this->meta_keywords    = $meta_tag->keywords;
-                $this->meta_description = $meta_tag->description;
-            }
+    public function setMetaTags($model)
+    {
+        $meta_tag = MetaTag::model()->findByAttributes(array(
+            'model_id'  => get_class($model),
+            'object_id' => $model->id
+        ));
+
+        if ($meta_tag)
+        {
+            $this->meta_title       = $meta_tag->title;
+            $this->meta_keywords    = $meta_tag->keywords;
+            $this->meta_description = $meta_tag->description;
         }
     }
 

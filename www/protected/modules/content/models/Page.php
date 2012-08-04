@@ -44,28 +44,12 @@ class Page extends ActiveRecordModel
                 'is_published', 'numerical',
                 'integerOnly' => true
             ), array(
-                'url', 'length',
+                'url, title', 'length',
                 'max' => 250
-            ), array(
-                'title', 'length',
-                'max'=> 200
-            ), array('text', 'safe'), array('meta_tags, god', 'safe'), array(
+            ), array('text, sidebar_top, meta_tags, god', 'safe'), array(
                 'title, url', 'filter',
                 'filter' => 'strip_tags'
-            ), array(
-                'back_left', 'file',
-                'types'      => 'jpg, jpeg, gif, png, tif',
-                'allowEmpty' => true,
-                'maxSize'    => 1024 * 1024 * 2.5,
-                'tooLarge'   => 'Максимальный размер файла 2.5 Мб'
-            ), array(
-                'back_center', 'file',
-                'types'      => 'jpg, jpeg, gif, png, tif',
-                'allowEmpty' => true,
-                'maxSize'    => 1024 * 1024 * 2.5,
-                'tooLarge'   => 'Максимальный размер файла 2.5 Мб'
             ),
-            array('meta_tags','safe'),
             array(
                 'id, title, url, text, is_published, date_create', 'safe',
                 'on'=> 'search'
@@ -134,8 +118,6 @@ class Page extends ActiveRecordModel
     public function uploadFiles()
     {
         return array(
-            'back_left'   => array('dir' => self::UPLOAD_PATH),
-            'back_center' => array('dir' => self::UPLOAD_PATH)
         );
     }
 
@@ -153,31 +135,5 @@ class Page extends ActiveRecordModel
     }
 
 
-    public function getBackLeft()
-    {
-        if ($this->back_left)
-        {
-            $img = '/' . self::UPLOAD_PATH . '/' . $this->back_left;
-        }
-        else
-        {
-            $img = '/images/left.jpg';
-        }
-        return "style='background: url({$img}) no-repeat'";
-    }
-
-
-    public function getBackCenter()
-    {
-        if ($this->back_center)
-        {
-            $img = '/' . self::UPLOAD_PATH . '/' . $this->back_center;
-            return "style='background: url({$img}) no-repeat'";
-        }
-        else
-        {
-            return '';
-        }
-    }
 }
 

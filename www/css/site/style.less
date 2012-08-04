@@ -43,10 +43,12 @@
     }
     .phones{
         float:       right;
-        font-size:   16px;
+        font-size:   18px;
+        line-height: 20px;
+        font-family: Verdana;
         color:       #fff;
         font-weight: bold;
-        margin:      25px 50px 0 0;
+        margin:      20px 50px 0 0;
         span{
             color: @colorLightGreen;
         }
@@ -143,17 +145,18 @@
 
     .top-menu{
         height: 126px;
+        margin: 10px 0 0 4px;
         li{
             float:   left;
             display: block;
             width:   96px;
-            margin:  0 2px;
+            margin:  0 4px;
 
             a{
-                font-size:   10px;
+                font-size:   11px;
                 color:       #333;
                 text-align:  center;
-                line-height: 12px;
+                line-height: 18px;
 
                 &:hover{
                     font-weight:     bold;
@@ -188,7 +191,7 @@
         .crovel{
             .top-menu-icon('03');
         }
-        .media{
+        .metall{
             .top-menu-icon('04');
         }
         .electro{
@@ -197,7 +200,7 @@
         .light{
             .top-menu-icon('06');
         }
-        .shnow{
+        .snow{
             .top-menu-icon('07');
         }
         .condition{
@@ -228,7 +231,7 @@
     .page-header{
         margin:      10px 0 0 10px;
         color:       @colorDarkBlue;
-        font-size:   22px;
+        font-size:   20px;
         font-weight: bold;
         line-height: 28px;
         border:      none;
@@ -247,7 +250,8 @@
                 color:           @colorDarkBlue;
             }
             .news-date a{
-                text-decoration: underline;
+                text-decoration: none;
+                cursor: pointer;
                 color:           @colorLightBlue;
             }
 
@@ -256,11 +260,13 @@
                 span{
                 }
                 a{
-                    text-decoration: underline;
+                    cursor: pointer;
+                    text-decoration: none;
                     color:           @colorDarkBlue;
                 }
             }
             .news-more{
+                cursor: pointer;
                 color: @colorLightBlue;
             }
         }
@@ -268,6 +274,10 @@
 
     .content-internal{
         margin: 10px 0 0 0;
+        a{
+            font-weight: bold;
+            text-decoration: underline;
+        }
     }
 
     .service{
@@ -290,9 +300,14 @@
                 margin:           0 0 0 50px;
                 float:            left;
                 list-style-image: url(/images/children_icon2.png);
+                li{
+                    width: 280px;
+                    float: left;
+                }
                 a{
                     text-transform: uppercase;
-                    color:          #333;
+                    color:          #555;
+                    font-weight: bold;
                     &.active{
                         color: #185fa1;
                     }
@@ -300,7 +315,7 @@
             }
         }
         .icon{
-            margin: 0 15px 10px 0;
+            margin: 0 20px 10px 0;
         }
         .small-title{
             text-transform:  uppercase;
@@ -326,6 +341,14 @@ footer{
         float:      left;
         text-align: center;
         margin:     0 28px;
+        img{
+            border: 1px solid #999;
+            .border-radius(4px);
+            padding: 2px;
+        }
+    }
+    .img_title{
+        margin: 5px 0 0 0;
     }
 }
 
@@ -343,5 +366,17 @@ footer{
     .dashed-divider{
         margin:        10px 0;
         border-bottom: 1px dashed #999;
+    }
+}
+
+.year-pager{
+    list-style: none;
+    float:left;
+    margin: 15px 0 0 0;
+    li{
+        display: block;
+        a{
+            color: @colorDarkBlue;
+        }
     }
 }

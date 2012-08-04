@@ -12,7 +12,9 @@ $this->page_title = Yii::t('NewsModule.main', 'Наш <span>Фотоотчет</
         'summaryText'      => false,
         'ajaxUpdate'       => false,
         'pagerCssClass' => 'pager clr',
-        'pager'            => false
+        'pager'            => array(
+            'class'   => 'YearPager',
+        )
     ));
     ?>
 </div>

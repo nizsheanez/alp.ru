@@ -43,12 +43,10 @@ class CategoryAdminController extends AdminController
         if ($form->submitted('submit'))
         {
             $model = $form->model;
-
             if ($model->saveNode())
             {
                 $this->redirect($model->manageUrl);
             }
-
         }
 
         $this->render('update', array('form' => $form));
@@ -97,18 +95,21 @@ class CategoryAdminController extends AdminController
             foreach ($nestedSortableFields as $key => $field)
             {
                 $update_data = CHtml::listData($data, 'item_id', $key);
+                if ($key == Category::DEPTH)
+                {
+                    foreach ($update_data as $key => $val)
+                    {
+                        $update_data[$key]++;
+                    }
+                }
                 $update[]    = "{$field} = " . SqlHelper::arrToCase('id', $update_data);
             }
 
             //обновляем всю таблицу, кроме рута
             $condition = Category::DEPTH . " > 1";
-            $command   = Yii::app()->db->commandBuilder->createSqlCommand(
+            $command   = Yii::app()->db->createCommand(
                 "UPDATE `{$model->tableName()}` SET " . implode(', ', $update) . " WHERE {$condition}");
             $command->execute();
-            echo CJSON::encode(array(
-                'status'  => 'ok',
-                'redirect'=> $this->url('manage')
-            ));
             Yii::app()->end();
         }
         $this->render('sorting');

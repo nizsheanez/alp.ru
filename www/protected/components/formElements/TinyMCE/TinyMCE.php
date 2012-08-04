@@ -4,27 +4,26 @@ class TinyMCE extends InputWidget
 	public $editorOptions = array();
     private $defaultOptions = array(
         'language'=>'ru',
-		'theme'=> "advanced",
-        'plugins' => "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave,jaretypograph",
-        'convert_urls' => false,
-        'relative_urls' => false,
-		'skin'=> "cirkuit",
+        'theme'=> "advanced",
+        'plugins' => "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,autosave,jaretypograph",
+        'convert_urls' => 'false',
+        'skin'=> "cirkuit",
 
-		'editorTemplate'=>'full',
+        'editorTemplate'=>'full',
 
         'extended_valid_elements' => "iframe[src|width|height|name|align|frameborder|scrolling]",
 
-			// Theme options
-			'theme_advanced_buttons1' => "undo,redo,|,bold,italic,underline,strikethrough,sub,sup,|,bullist,numlist,|,charmap,|,justifyleft,justifycenter,justifyright,justifyfull,|,outdent,indent,blockquote,formatselect",
-			'theme_advanced_buttons2' => "image,media,link,unlink,anchor,|,cut,copy,paste,pastetext,pasteword,|,newdocument,pagebreak,|,jaretypograph,visualaid,cleanup,removeformat,|,tablecontrols,fullscreen,|,code",
-			'theme_advanced_buttons3' => "",
-			'theme_advanced_toolbar_location' => "top",
-			'theme_advanced_toolbar_align' => "left",
-			'theme_advanced_statusbar_location' => "bottom",
-			'theme_advanced_resizing' => 'true',
-            'file_browser_callback' => "tinyBrowser",
+        // Theme options
+        'theme_advanced_buttons1' => "forecolor,backcolor,|,blockquote,formatselect,fontsizeselect,|,undo,redo,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,",
+        'theme_advanced_buttons2' => "image,media,link,unlink,anchor,|,cut,copy,paste,pastetext,pasteword,|,newdocument,pagebreak,|,jaretypograph,visualaid,cleanup,removeformat,emotions,|,outdent,indent,bullist,numlist,|,sub,sup",
+        'theme_advanced_buttons3' => "tablecontrols, hr,charmap,insertdate,inserttime,charmap,|,fullscreen,|,code",
+        'theme_advanced_toolbar_location' => "top",
+        'theme_advanced_toolbar_align' => "left",
+        'theme_advanced_statusbar_location' => "bottom",
+        'theme_advanced_resizing' => 'true',
+        'file_browser_callback' => "tinyBrowser",
 
-		'width'=>'99%',
+        'width'=>'99%',
         'height'=>'350',
     );
 

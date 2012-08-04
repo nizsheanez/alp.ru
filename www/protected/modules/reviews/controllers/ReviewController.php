@@ -13,10 +13,8 @@ class ReviewController extends BaseController
 
     public function actionView($id)
     {
-        $this->back_left   = '';
-        $this->back_center = '';
         $this->cur_link = 'reviews';
-
+        $this->clips['sidebar_top'] = Setting::getValue('reviews_sidebar_top');
 
         $this->render('view', array(
             'model'      => $this->loadModel($id, array('published'))
@@ -34,10 +32,8 @@ class ReviewController extends BaseController
             'pagination' => false
         ));
 
-        $this->back_left   = '';
-        $this->back_center = '';
         $this->cur_link = 'reviews';
-
+        $this->clips['sidebar_top'] = Setting::getValue('reviews_sidebar_top');
 
         $this->render('index', array(
             'data_provider' => $data_provider

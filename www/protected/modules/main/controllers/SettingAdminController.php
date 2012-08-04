@@ -24,8 +24,7 @@ class SettingAdminController extends AdminController
 	{
 		$model = $this->loadModel($id);
 
-		// $this->performAjaxValidation($model);
-
+        $this->performAjaxValidation($model);
 		$form = new BaseForm('main.SettingForm', $model);
 
 		if(isset($_POST['Setting']))

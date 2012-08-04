@@ -18,8 +18,8 @@
     $cs->registerScriptFile('/js/site/scripts.js');
     ?>
 </head>
-<body oncontextmenu="return false" oncopy="return false" ondragstart="return false">
-<!--<body>-->
+<!--<body oncontextmenu="return false" oncopy="return false" ondragstart="return false">-->
+<body>
 
 <div class="container main">
     <div class="header">
@@ -40,9 +40,7 @@
             <div class="pull-left man">
             </div>
             <div class="pull-left sidebar-top">
-                <h3><?= $this->sidebar_top_header ?></h3>
-
-                <div class="divider"></div>
+<!--                <div class="divider"></div>-->
                 <?= $this->clips['sidebar_top'] ?>
             </div>
         </div>
@@ -70,16 +68,11 @@
                 <?php
                 foreach (News::model()->active()->limit(3)->findAll() as $model)
                 {
-                    $title = CHtml::link($model->title . ' |', $model->getUrl());
+                    $title = $model->title . ' |' ;
                     echo CHtml::tag('h5', array('class' => 'news-title'), $title);
-                    $date = CHtml::link(date('d.m.Y', strtotime($model->date)), $model->getUrl());
+                    $date = date('d.m.Y', strtotime($model->date));
                     echo CHtml::tag('div', array('class' => 'news-date'), $date);
-                    $tail    = CHtml::tag('span', array('class' => 'news-more'), 'фото &raquo;');
-                    $content = Yii::app()->text->cut($model->content, 220) . '...';
-                    $tail    = CHtml::link($tail, $model->getUrl());
-                    $link    = CHtml::link($content, $model->getUrl()) . '<span>&nbsp;</span>' . $tail;
-
-                    echo CHtml::tag('div', array('class' => 'news-preview'), $link);
+                    echo CHtml::tag('div', array('class' => 'news-preview'), $model->content);
                 }
                 ?>
             </div>
