@@ -75,6 +75,7 @@
                     echo CHtml::tag('div', array('class' => 'news-preview'), $model->content);
                 }
                 ?>
+                <a class="all-news" href="<?php echo Yii::app()->createUrl('/news/news/index') ?>"><img src="/images/all_news.png" /></a>
             </div>
         </div>
     </div>
