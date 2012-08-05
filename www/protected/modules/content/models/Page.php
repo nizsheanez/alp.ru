@@ -46,7 +46,7 @@ class Page extends ActiveRecordModel
             ), array(
                 'url, title', 'length',
                 'max' => 250
-            ), array('text, sidebar_top, meta_tags, god', 'safe'), array(
+            ), array('text, sidebar_top, sidebar_top_title, meta_tags, god', 'safe'), array(
                 'title, url', 'filter',
                 'filter' => 'strip_tags'
             ),

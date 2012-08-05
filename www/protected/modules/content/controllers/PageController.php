@@ -33,7 +33,8 @@ class PageController extends BaseController
         }
 
         $this->cur_link = $page->url;
-        $this->clips['sidebar_top'] = $page->sidebar_top;
+        $this->sidebar_top = $page->sidebar_top;
+        $this->sidebar_top_title = $page->sidebar_top_title;
         $this->render("view", array("page" => $page));
     }
 
@@ -48,7 +49,8 @@ class PageController extends BaseController
             return;
         }
 
-        $this->clips['sidebar_top'] = $page->sidebar_top;
+        $this->sidebar_top = $page->sidebar_top;
+        $this->sidebar_top_title = $page->sidebar_top_title;
 
         $this->render('view', array('page' => $page));
     }  

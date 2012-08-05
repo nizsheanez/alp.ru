@@ -14,7 +14,9 @@ class NewsController extends BaseController
 
     public function actionView($id)
     {
-        $this->clips['sidebar_top'] = Setting::getValue('news_sidebar_top');
+        $model = News::model()->findByAttributes(array('url' => 'news'));
+        $this->sidebar_top = $model->sidebar_top;
+        $this->sidebar_top_title = $model->sidebar_top_title;
 
         $this->render('view', array(
             'model'      => $this->loadModel($id, array('active'))
@@ -26,7 +28,8 @@ class NewsController extends BaseController
     {
         $page = Page::model()->findByAttributes(array('url'=>'news'));
         $this->setMetaTags($page);
-        $this->clips['sidebar_top'] = $page->sidebar_top;
+        $this->sidebar_top = $page->sidebar_top;
+        $this->sidebar_top_title = $page->sidebar_top_title;
 
         $model         = News::model();
         $data_provider = new ActiveDataProvider(get_class($model), array(

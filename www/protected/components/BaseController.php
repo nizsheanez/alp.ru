@@ -10,6 +10,8 @@ abstract class BaseController extends CController
     public $layout = '//layouts/main';
 
     public $page_title;
+    public $sidebar_top_title;
+    public $sidebar_top;
 
     public $meta_title;
 

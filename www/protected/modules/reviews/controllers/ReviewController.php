@@ -14,7 +14,9 @@ class ReviewController extends BaseController
     public function actionView($id)
     {
         $this->cur_link = 'reviews';
-        $this->clips['sidebar_top'] = Setting::getValue('reviews_sidebar_top');
+        $page = Page::model()->findByAttributes(array('url' => 'news'));
+        $this->sidebar_top = $page->sidebar_top;
+        $this->sidebar_top_title = $page->sidebar_top_title;
 
         $this->render('view', array(
             'model'      => $this->loadModel($id, array('published'))
@@ -26,7 +28,8 @@ class ReviewController extends BaseController
     {
         $page = Page::model()->findByAttributes(array('url'=>'reviews'));
         $this->setMetaTags($page);
-        $this->clips['sidebar_top'] = $page->sidebar_top;
+        $this->sidebar_top = $page->sidebar_top;
+        $this->sidebar_top_title = $page->sidebar_top_title;
 
         $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
 

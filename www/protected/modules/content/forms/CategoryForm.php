@@ -1,13 +1,17 @@
 <?php
 $elements = array(
-    'is_published' => array('type' => 'checkbox'),
-    'title'        => array('type' => 'text'),
-    'alias'        => array('type' => 'alias', 'source' => 'title'),
-    'icon'         => array('type' => 'file'),
-    'text'         => array('type' => 'editor'),
-    'for_price'    => array('type' => 'editor'),
-    'sidebar_top'  => array('type' => 'editor'),
-    'meta_tags'    => array('type' => 'MetaTags'),
+    'is_published'       => array('type' => 'checkbox'),
+    'title'              => array('type' => 'text'),
+    'alias'              => array(
+        'type'   => 'alias',
+        'source' => 'title'
+    ),
+    'icon'               => array('type' => 'file'),
+    'text'               => array('type' => 'editor'),
+    'for_price'          => array('type' => 'editor'),
+    'sidebar_top_title'  => array('type' => 'text'),
+    'sidebar_top'        => array('type' => 'editor'),
+    'meta_tags'          => array('type' => 'MetaTags'),
 );
 if ($this->model->is_system)
 {
@@ -16,7 +20,7 @@ if ($this->model->is_system)
 return array(
     'activeForm' => array(
         'id'                     => 'category-form',
-        'htmlOptions'=>array('enctype'=>'multipart/form-data'),
+        'htmlOptions'            => array('enctype'=> 'multipart/form-data'),
         'class'                  => 'CActiveForm',
         'enableAjaxValidation'   => true,
         'enableClientValidation' => true,

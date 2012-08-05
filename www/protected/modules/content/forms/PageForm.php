@@ -12,12 +12,13 @@ return array(
         )
     ),
     'elements'  => array(
-        'title'        => array('type' => 'text'),
-        'url'          => array('type' => 'text'),
-        'text'         => array('type' => 'editor'),
-        'sidebar_top'  => array('type' => 'editor'),
-        'is_published' => array('type' => 'checkbox'),
-        'meta_tags'    => array('type' => 'MetaTags'),
+        'title'              => array('type' => 'text'),
+        'url'                => array('type' => 'text'),
+        'text'               => array('type' => 'editor'),
+        'sidebar_top'        => array('type' => 'editor'),
+        'sidebar_top_title'  => array('type' => 'text'),
+        'is_published'       => array('type' => 'checkbox'),
+        'meta_tags'          => array('type' => 'MetaTags'),
     ),
     'buttons'   => array(
         'submit' => array(

@@ -40,8 +40,9 @@
             <div class="pull-left man">
             </div>
             <div class="pull-left sidebar-top">
-<!--                <div class="divider"></div>-->
-                <?= $this->clips['sidebar_top'] ?>
+                <?php echo $this->sidebar_top_title ?>
+                <div class="divider"></div>
+                <?php echo $this->sidebar_top ?>
             </div>
         </div>
         <div>

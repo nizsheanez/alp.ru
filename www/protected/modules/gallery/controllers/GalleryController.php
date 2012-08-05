@@ -15,7 +15,9 @@ class GalleryController extends BaseController
     public function actionView($id)
     {
         $this->cur_link = 'photo';
-        $this->clips['sidebar_top'] = Setting::getValue('gallery_sidebar_top');
+        $page = Page::model()->findByAttributes(array('url' => 'gallery'));
+        $this->sidebar_top = $page->sidebar_top;
+        $this->sidebar_top_title = $page->sidebar_top_title;
 
         $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
 
@@ -29,7 +31,8 @@ class GalleryController extends BaseController
     {
         $page = Page::model()->findAllByAttributes(array('url' => 'gallery'));
         $this->setMetaTags($page);
-        $this->clips['sidebar_top'] = $page->sidebar_top;
+        $this->sidebar_top = $page->sidebar_top;
+        $this->sidebar_top_title = $page->sidebar_top_title;
 
         $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
         $model         = Gallery::model();
