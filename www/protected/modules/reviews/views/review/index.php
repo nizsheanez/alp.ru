@@ -1,7 +1,6 @@
 <?php
 $this->page_title = Yii::t('NewsModule.main', 'Отзывы');
 ?>
-<div class="title">Отзывы</div>
 <div id="review-list">
     <?php
     $this->widget('ListView', array(
@@ -12,7 +11,7 @@ $this->page_title = Yii::t('NewsModule.main', 'Отзывы');
         'summaryText'      => false,
         'ajaxUpdate'       => false,
         'pager'            => array(
-            'class'   => 'CLinkPager',
+            'class'   => 'YearPager',
         )
     ));
     ?>

@@ -29,7 +29,7 @@ class GalleryController extends BaseController
 
     public function actionIndex()
     {
-        $page = Page::model()->findAllByAttributes(array('url' => 'gallery'));
+        $page = Page::model()->findByAttributes(array('url' => 'gallery'));
         $this->setMetaTags($page);
         $this->sidebar_top = $page->sidebar_top;
         $this->sidebar_top_title = $page->sidebar_top_title;

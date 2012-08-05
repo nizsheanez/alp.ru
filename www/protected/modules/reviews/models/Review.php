@@ -91,7 +91,7 @@ class Review extends ActiveRecordModel
             ), array(
                 'title, is_published', 'required'
             ), array(
-                'meta_tags, roles', 'safe',
+                'meta_tags, date, roles', 'safe',
                 'on' => array(
                     self::SCENARIO_CREATE, self::SCENARIO_UPDATE
                 )

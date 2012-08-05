@@ -27,7 +27,7 @@ class YearPager extends CLinkPager
             }
         }
 
-        return array_reverse($buttons);
+        return $buttons;
     }
 
     protected function createPageButton($label,$page,$class,$hidden,$selected)

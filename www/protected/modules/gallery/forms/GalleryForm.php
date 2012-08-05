@@ -7,7 +7,6 @@ return array(
         'htmlOptions'=> array('enctype'=> 'multipart/form-data'),
     ),
     'elements'   => array(
-        'is_published' => array('type' => 'checkbox'),
         'title'        => array(
             'type'  => 'text',
             'class' => 'big'

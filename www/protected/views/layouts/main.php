@@ -40,9 +40,13 @@
             <div class="pull-left man">
             </div>
             <div class="pull-left sidebar-top">
-                <?php echo $this->sidebar_top_title ?>
+                <div class="sidebar-top-title">
+                    <?php echo $this->sidebar_top_title ?>
+                </div>
                 <div class="divider"></div>
-                <?php echo $this->sidebar_top ?>
+                <div class="sidebar-top-internal">
+                    <?php echo $this->sidebar_top ?>
+                </div>
             </div>
         </div>
         <div>

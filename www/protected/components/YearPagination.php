@@ -5,7 +5,9 @@ class YearPagination extends CPagination
 
     public function getPageCount()
     {
-        return (int)$this->model->model()->active()->group('YEAR(date)')->count();
+        $model = $this->model->model()->group('YEAR(date)');
+        $model->getDbCriteria()->addCondition('date!="0000-00-00"');
+        return (int)$model->count();
     }
 
     public function applyLimit($criteria)

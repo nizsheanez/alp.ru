@@ -36,8 +36,10 @@ class ReviewController extends BaseController
         $model         = Review::model();
         $data_provider = new ActiveDataProvider(get_class($model), array(
             'criteria'   => $model->published()->ordered()->getDbCriteria(),
-            'pagination' => false
         ));
+        $pagination = new YearPagination();
+        $pagination->model = $model;
+        $data_provider->setPagination($pagination);
 
         $this->cur_link = 'reviews';
 

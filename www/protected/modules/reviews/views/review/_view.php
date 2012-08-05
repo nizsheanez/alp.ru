@@ -1,7 +1,7 @@
 <?php if ($data->photo)
 {
     ?>
-<div class="review_item">
+<div class="review_item <?php echo $index % 3 == 0 ? 'clr' : '' ?>">
     <a href="/<?php echo Review::PHOTOS_DIR.'/'. $data->photo ?>">
         <?php
         echo ImageHelper::thumb(Review::PHOTOS_DIR, $data->photo, 150, 220, true, 'width="150" height="220" class="news_preview_image" target="_blank"');

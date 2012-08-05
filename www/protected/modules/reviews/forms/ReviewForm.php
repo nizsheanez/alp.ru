@@ -13,6 +13,7 @@ return array(
         ),
         'is_published' => array('type' => 'checkbox'),
         'photo' => array('type' => 'file'),
+        'date' => array('type' => 'date'),
 //        'meta'  => array(
 //            'type'   => 'widget',
 //            'widget' => 'MetaTagSubForm'
