@@ -1,4 +1,4 @@
-<?php $this->page_title = $model->title; ?>
+<?php $this->page_title = $model->getMainCategory()->title; ?>
 <div class="category">
     <div class="details">
         <div class="text">

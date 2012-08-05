@@ -114,6 +114,18 @@ class Category extends ActiveRecordModel
     }
 
 
+    public function getMainCategory()
+    {
+        if ($this->depth == 2)
+        {
+            return $this;
+        }
+        else
+        {
+            return $this->getParent();
+        }
+    }
+
     /*
     * Выводит дерево в виде вложенных списков, без рекурсии
     */
