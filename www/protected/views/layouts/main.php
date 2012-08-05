@@ -82,6 +82,9 @@
     <div class="clr"></div>
     <br/>
     <footer>
+        <div class="copyright">
+            Copyright © <?php echo date('Y', time()); ?> BSU, Все права защищены.
+        </div>
         <div class="statistic">
             <?php echo Setting::getValue('footer')?>
         </div>

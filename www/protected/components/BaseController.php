@@ -2,40 +2,10 @@
 
 abstract class BaseController extends CController
 {
-    public $back_left;
-    public $back_center;
-
     public $cur_chapter;
     public $cur_link;
 
     public $sidebar_top_header;
-
-
-    public function getBackLeft()
-    {
-        if ($this->back_left)
-        {
-            return $this->back_left;
-        }
-        else
-        {
-            return "style='background: url(/images/left.jpg) no-repeat'";
-        }
-    }
-
-
-    public function getBackCenter()
-    {
-        if ($this->back_center)
-        {
-            return $this->back_center;
-        }
-        else
-        {
-            return '';
-        }
-    }
-
 
     public $layout = '//layouts/main';
 

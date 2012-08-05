@@ -5,6 +5,7 @@ class ActiveDataProvider extends CActiveDataProvider
 
     public function __construct($modelClass, $config = array())
     {
+        CGridColumn::
         if (!isset($config['pagination']) || $config['pagination'] !== false)
         {
             if (isset(Yii::app()->session[$modelClass . "PerPage"]) &&
