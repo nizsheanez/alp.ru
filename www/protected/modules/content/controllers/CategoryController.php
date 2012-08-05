@@ -23,8 +23,11 @@ class CategoryController extends BaseController
 
     public function actionPrices()
     {
-        $this->cur_link = 'price';
         $page = Page::model()->findByAttributes(array('url'=>'prices'));
+        $this->setMetaTags($page);
+        $this->clips['sidebar_top'] = $page->sidebar_top;
+
+        $this->cur_link = 'price';
         $this->render('prices', array('html' => Category::getHtmlTree(false, 1), 'page' => $page));
     }
 

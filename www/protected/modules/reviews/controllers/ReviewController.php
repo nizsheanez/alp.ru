@@ -24,6 +24,10 @@ class ReviewController extends BaseController
 
     public function actionIndex()
     {
+        $page = Page::model()->findByAttributes(array('url'=>'reviews'));
+        $this->setMetaTags($page);
+        $this->clips['sidebar_top'] = $page->sidebar_top;
+
         $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
 
         $model         = Review::model();
@@ -33,7 +37,6 @@ class ReviewController extends BaseController
         ));
 
         $this->cur_link = 'reviews';
-        $this->clips['sidebar_top'] = Setting::getValue('reviews_sidebar_top');
 
         $this->render('index', array(
             'data_provider' => $data_provider

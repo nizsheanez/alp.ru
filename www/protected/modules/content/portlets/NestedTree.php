@@ -28,7 +28,7 @@ class NestedTree extends Portlet
         'update'                => "js:function(event, ui)
         {
             var data = $(this).nestedSortable('toArray');
-            $.post('/regions/save/sortMetrics',
+            $.post('/content/categoryAdmin/sorting',
                 {
                     tree:$.toJSON(data)
                 },
