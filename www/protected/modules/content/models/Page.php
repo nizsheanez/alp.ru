@@ -44,12 +44,9 @@ class Page extends ActiveRecordModel
                 'is_published', 'numerical',
                 'integerOnly' => true
             ), array(
-                'url, title', 'length',
+                'sidebar_top_title, url, title', 'length',
                 'max' => 250
-            ), array('text, sidebar_top, sidebar_top_title, meta_tags, god', 'safe'), array(
-                'title, url', 'filter',
-                'filter' => 'strip_tags'
-            ),
+            ), array('text, sidebar_top, meta_tags, god', 'safe'),
             array(
                 'id, title, url, text, is_published, date_create', 'safe',
                 'on'=> 'search'

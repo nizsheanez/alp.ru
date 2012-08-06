@@ -40,7 +40,7 @@ class Category extends ActiveRecordModel
     {
         return array(
             array(
-                'title, icon, alias, sidebar_top, sidebar_top_title', 'length',
+                'title, icon, alias, sidebar_top_title', 'length',
                 'max' => 250
             ), array(
                 'title', 'required'
@@ -48,7 +48,7 @@ class Category extends ActiveRecordModel
                 'for_price, text', 'length',
                 'max' => 25000
             ), array(
-                'is_published', 'safe'
+                'sidebar_top, is_published', 'safe'
             ), array(
                 'text', 'length',
                 'max' => 25000

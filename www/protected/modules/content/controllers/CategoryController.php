@@ -16,6 +16,11 @@ class CategoryController extends BaseController
 
     public function actionService()
     {
+        $page = Page::model()->findByAttributes(array('url'=>'service'));
+        $this->setMetaTags($page);
+        $this->sidebar_top = $page->sidebar_top;
+        $this->sidebar_top_title = $page->sidebar_top_title;
+
         $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
         $this->render('service', array('html' => Category::getHtmlTree()));
     }

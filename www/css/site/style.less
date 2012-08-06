@@ -85,7 +85,7 @@
                     background: url(/images/menu_divider.png) no-repeat;
                     height:     30px;
                     width:      2px;
-                    margin:     2px 0 0 0;
+                    margin:     2px 0 0 1px;
                     padding:    0;
                 }
                 li{
@@ -102,6 +102,9 @@
                         font-weight:     bold;
                         text-decoration: none;
                         display:         block;
+                        a:hover{
+                            text-decoration: underline;
+                        }
                     }
                 }
                 li.active{
@@ -130,13 +133,15 @@
 
         .sidebar-top{
             background: url(/images/sidebar-top.png);
-            width:      301px;
-            height:     @height;
+            width:      281px;
+            height:     @height - 20;
             margin:     0;
+            padding:    10px;
             float:      left;
 
             .divider{
-                background: url(/images/horizontal_divider.png);
+                background: url(/images/horizontal_divider.png) no-repeat;
+                margin: 0 auto;
                 height: 2px;
             }
             .sidebar-top-internal{
@@ -146,6 +151,7 @@
             .sidebar-top-title{
                 text-align: center;
                 font-size: 18px;
+                font-weight: bold;
                 color: #fff;
             }
         }
@@ -208,6 +214,7 @@
         }
         .light{
             .top-menu-icon('06');
+            margin: 0 0 0 11px;
         }
         .snow{
             .top-menu-icon('07');
@@ -247,7 +254,7 @@
         margin:         10px;
         color:          @colorDarkBlue;
         font-size:      20px;
-        font-weight:    bold;
+        padding-bottom: 0;
         border:         none;
         span{
             color: @colorGreen;
@@ -263,6 +270,7 @@
                 color:           @colorDarkBlue;
             }
             .news-date{
+                font-weight: bold;
                 color:           @colorLightBlue;
             }
 
@@ -286,7 +294,7 @@
     .content-internal{
         margin: 10px 0 0 0;
         a{
-            font-weight:     bold;
+            color: @colorLightBlue;
             text-decoration: underline;
         }
         hr{
@@ -313,13 +321,13 @@
 
     .category{
         .children{
-            margin: 0 0 0 30px;
+            margin: 0 0 0 60px;
             ul{
                 margin:           0 0 0 50px;
                 float:            left;
                 list-style-image: url(/images/children_icon2.png);
                 li{
-                    width: 280px;
+                    width: 260px;
                     float: left;
                 }
                 a{
