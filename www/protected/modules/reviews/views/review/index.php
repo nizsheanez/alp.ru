@@ -1,6 +1,3 @@
-<?php
-$this->page_title = Yii::t('NewsModule.main', 'Отзывы');
-?>
 <div id="review-list">
     <?php
     $this->widget('ListView', array(

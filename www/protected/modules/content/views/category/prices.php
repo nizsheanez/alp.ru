@@ -1,6 +1,3 @@
-<?php
-    $this->page_title = 'Цены';
-?>
 <br/>
     <div class="text">
         <?php echo $page->getContent(); ?>

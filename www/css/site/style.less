@@ -106,7 +106,7 @@ body{
                         font-weight:     bold;
                         text-decoration: none;
                         display:         block;
-                        a:hover{
+                        &:hover{
                             text-decoration: underline;
                         }
                     }
@@ -157,6 +157,7 @@ body{
                 font-size: 18px;
                 font-weight: bold;
                 color: #fff;
+                margin-bottom: 10px;
             }
         }
 
@@ -300,6 +301,9 @@ body{
         a{
             color: @colorLightBlue;
             text-decoration: underline;
+            &:hover{
+                text-decoration: none;
+            }
         }
         hr{
             background: url(/images/divider_long.png) no-repeat;
@@ -325,9 +329,9 @@ body{
 
     .category{
         .children{
-            margin: 0 0 0 60px;
+            margin: 0 0 0 30px;
             ul{
-                margin:           0 0 0 50px;
+                margin:           0 0 0 60px;
                 float:            left;
                 list-style-image: url(/images/children_icon2.png);
                 li{
@@ -341,6 +345,7 @@ body{
                     text-decoration: none;
 
                     &.active{
+                        text-decoration: underline;
                         color: #185fa1;
                     }
                 }

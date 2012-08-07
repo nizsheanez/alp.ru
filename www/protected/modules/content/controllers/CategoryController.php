@@ -21,7 +21,6 @@ class CategoryController extends BaseController
         $this->sidebar_top = $page->sidebar_top;
         $this->sidebar_top_title = $page->sidebar_top_title;
 
-        $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
         $this->render('service', array('html' => Category::getHtmlTree()));
     }
 
@@ -42,7 +41,6 @@ class CategoryController extends BaseController
     {
         $model = $category = $this->loadModel($alias ? $alias : $id, array('published'), $alias ? 'alias' : null);
 
-        $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
         $this->cur_link = 'price';
         $this->sidebar_top = $model->sidebar_top;
         $this->sidebar_top_title = $model->sidebar_top_title;

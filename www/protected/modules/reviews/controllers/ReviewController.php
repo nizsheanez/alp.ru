@@ -31,8 +31,6 @@ class ReviewController extends BaseController
         $this->sidebar_top = $page->sidebar_top;
         $this->sidebar_top_title = $page->sidebar_top_title;
 
-        $this->meta_title = 'ВертикАльП - промышленный альпинизм, любые виды высотных работ';
-
         $model         = Review::model();
         $data_provider = new ActiveDataProvider(get_class($model), array(
             'criteria'   => $model->published()->ordered()->getDbCriteria(),
