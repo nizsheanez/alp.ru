@@ -71,7 +71,7 @@
             <div class="divider-short"></div>
             <div class="sidebar-content">
                 <?php
-                foreach (News::model()->limit(3)->findAll() as $model)
+                foreach (News::model()->last()->limit(3)->findAll() as $model)
                 {
                     $title = $model->title . ' |' ;
                     echo CHtml::tag('h5', array('class' => 'news-title'), $title);

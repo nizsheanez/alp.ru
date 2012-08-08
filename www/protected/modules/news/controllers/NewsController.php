@@ -32,9 +32,7 @@ class NewsController extends BaseController
         $this->sidebar_top_title = $page->sidebar_top_title;
 
         $model         = News::model();
-        $data_provider = new ActiveDataProvider(get_class($model), array(
-            'criteria' => $model->active()->last()->getDbCriteria(),
-        ));
+        $data_provider = new ActiveDataProvider($model->last());
         $pagination = new YearPagination();
         $pagination->model = $model;
         $data_provider->setPagination($pagination);

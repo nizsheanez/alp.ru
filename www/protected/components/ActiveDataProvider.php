@@ -3,8 +3,9 @@ class ActiveDataProvider extends CActiveDataProvider
 {
     const PAGE_SIZE = 10;
 
-    public function __construct($modelClass, $config = array())
+    public function __construct($model, $config = array())
     {
+        $modelClass = is_string($model) ? $model : get_class($model);
         if (!isset($config['pagination']) || $config['pagination'] !== false)
         {
             if (isset(Yii::app()->session[$modelClass . "PerPage"]) &&
