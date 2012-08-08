@@ -285,8 +285,11 @@ body{
                 }
                 a{
                     cursor:          pointer;
-                    text-decoration: none;
+                    text-decoration: underline;
                     color:           @colorLightBlue;
+                    &:hover{
+                        text-decoration: none;
+                    }
                 }
             }
             .news-more{
@@ -421,6 +424,7 @@ footer{
     li{
         display: block;
         a{
+            font-weight: bold;
             color: @colorDarkBlue;
         }
     }
