@@ -137,7 +137,7 @@ Version Notes
    Added automatic creation of upload directories (with definable chmod for Unix
    servers).
    Added alert messages for errors and actions.
-   Multi-lingual support - credit to Francis Rebouças 
+   Multi-lingual support - credit to Francis Rebouï¿½as 
    (francisreboucas[at]gmail[dot]com) for idea, design, implementation and 
    Portugese language file.
    Experimental support for FCKeditor.
