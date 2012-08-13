@@ -33,6 +33,7 @@ class CategoryController extends BaseController
         $this->page_title = $page->title;
         $this->sidebar_top_title = $page->sidebar_top_title;
 
+
         $this->cur_link = 'price';
         $this->render('prices', array('html' => Category::getHtmlTree(false, 1), 'page' => $page));
     }
@@ -45,6 +46,11 @@ class CategoryController extends BaseController
         $this->cur_link = 'price';
         $this->sidebar_top = $model->sidebar_top;
         $this->sidebar_top_title = $model->sidebar_top_title;
+        $this->setMetaTags($model);
+
+        $page = Page::model()->findByAttributes(array('url'=>'prices'));
+        $this->page_title = $page->title;
+
 
         $page = Page::model()->findByAttributes(array('url'=>'prices'));
         $this->page_title = $page->title;
