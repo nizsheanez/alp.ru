@@ -24,7 +24,6 @@ $(function()
 </script>
 
 
-
 <?php $class = get_class($this->model); ?>
 
 <a href="" id="meta_tags_l">Мета-тэги</a>
@@ -32,24 +31,24 @@ $(function()
 <fieldset id="meta_tags_fs">
     <legend>Мета-тэги</legend>
 
-    <p>
-    <?php echo CHtml::activeLabel($model, 'title'); ?>
-    <?php echo CHtml::activeTextField($model, 'title', array('class' => 'text')); ?>
-    </p>
+    <div class="text">
+        <?php echo CHtml::activeLabel($model, 'title'); ?>
+        <?php echo CHtml::activeTextField($model, 'title', array('class' => 'text')); ?>
+    </div>
 
     <br/>
 
-    <p>
-    <?php echo CHtml::activeLabel($model, 'keywords'); ?>
-    <?php echo CHtml::activeTextField($model, 'keywords', array('class' => 'text')); ?>
-    </p>
+    <div class="text">
+        <?php echo CHtml::activeLabel($model, 'keywords'); ?>
+        <?php echo CHtml::activeTextArea($model, 'keywords', array('class' => 'text')); ?>
+    </div>
 
     <br/>
 
-    <p>
-    <?php echo CHtml::activeLabel($model, 'description'); ?>
-    <?php echo CHtml::activeTextField($model, 'description', array('class' => 'text')); ?>
-    </p>
+    <div class="text">
+        <?php echo CHtml::activeLabel($model, 'description'); ?>
+        <?php echo CHtml::activeTextArea($model, 'description', array('class' => 'text')); ?>
+    </div>
 
 </fieldset>
 

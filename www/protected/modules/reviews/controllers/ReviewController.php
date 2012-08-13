@@ -30,6 +30,7 @@ class ReviewController extends BaseController
         $this->setMetaTags($page);
         $this->sidebar_top = $page->sidebar_top;
         $this->sidebar_top_title = $page->sidebar_top_title;
+        $this->page_title = $page->title;
 
         $model         = Review::model();
         $data_provider = new ActiveDataProvider(get_class($model), array(
