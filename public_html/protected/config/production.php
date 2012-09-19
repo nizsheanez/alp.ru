@@ -8,7 +8,7 @@ return CMap::mergeArray(require(dirname(__FILE__) . '/main.php'), array(
             'password'              => 'inatic6infet',
             'charset'               => 'utf8',
             'schemaCachingDuration' => 86400,
-            //'enableProfiling'  => true,
+            'enableProfiling'  => false,
         )
     )
 ));

@@ -25,7 +25,8 @@ $modules['gii'] = array(
     'generatorPaths' => array('application.gii'),
     'password'       => 'giisecret',
     'ipFilters'      => array(
-        '127.0.0.1', '::1'
+        '127.0.0.1',
+        '::1'
     )
 );
 
@@ -36,9 +37,13 @@ return array(
     'preload'    => array('log'),
 
     'import'     => array_merge($modules_includes, array(
-        'application.components.*', 'application.components.validators.*', 'application.components.zii.*',
-        'application.components.formElements.*', 'application.components.baseWidgets.*',
-        'application.libs.tools.*', 'ext.yiiext.filters.setReturnUrl.ESetReturnUrlFilter',
+        'application.components.*',
+        'application.components.validators.*',
+        'application.components.zii.*',
+        'application.components.formElements.*',
+        'application.components.baseWidgets.*',
+        'application.libs.tools.*',
+        'ext.yiiext.filters.setReturnUrl.ESetReturnUrlFilter',
         'application.modules.srbac.controllers.SBaseController',
     )),
 
@@ -46,29 +51,35 @@ return array(
 
     'components' => array(
         'assetManager' => array(
-            'class' => 'AssetManager',
-            'parsers' => array(
+            'class'       => 'AssetManager',
+            'parsers'     => array(
                 'sass' => array( // key == the type of file to parse
-                    'class' => 'ext.assetManager.Sass', // path alias to the parser
-                    'output' => 'css', // the file type it is parsed to
+                    'class'   => 'ext.assetManager.Sass',
+                    // path alias to the parser
+                    'output'  => 'css',
+                    // the file type it is parsed to
                     'options' => array(
                         'syntax' => 'sass'
                     )
                 ),
                 'scss' => array( // key == the type of file to parse
-                    'class' => 'ext.assetManager.Sass', // path alias to the parser
-                    'output' => 'css', // the file type it is parsed to
+                    'class'   => 'ext.assetManager.Sass',
+                    // path alias to the parser
+                    'output'  => 'css',
+                    // the file type it is parsed to
                     'options' => array(
                         'syntax' => 'scss',
-                        'style' => 'compressed'
+                        'style'  => 'compressed'
                     )
                 ),
                 'less' => array( // key == the type of file to parse
-                    'class' => 'ext.assetManager.Less', // path alias to the parser
-                    'output' => 'css', // the file type it is parsed to
+                    'class'   => 'ext.assetManager.Less',
+                    // path alias to the parser
+                    'output'  => 'css',
+                    // the file type it is parsed to
                     'options' => array(
                         'syntax' => 'scss',
-                        'style' => 'compressed'
+                        'style'  => 'compressed'
                     )
                 ),
             ),
@@ -152,18 +163,24 @@ return array(
             'defaultRoles'    => array('guest')
         ),
 
-//        'log'=>array(
-//                'class'=>'CLogRouter',
-//                'routes'=>array(
-//                    array(
-//                        'class'        => 'DbLogRoute',
-//                        'levels'       => 'error, warning, info',
-//                        'connectionID' => 'db',
-//                        'logTableName' => 'log',
-//                        'enabled'      => true
-//                    )
-//                ),
-//        ),
+        'log'          => array(
+            'class' => 'CLogRouter',
+            'routes'=> array(
+                array(
+                    // направляем результаты профайлинга в ProfileLogRoute (отображается
+                    // внизу страницы)
+                    'class'  => 'CProfileLogRoute',
+                    'levels' => 'profile',
+                    'enabled'=> false,
+                ),
+                array(
+                    'class'      => 'CWebLogRoute',
+                    'categories' => 'application',
+                    'levels'     => 'error, warning, trace, profile, info',
+                    'enabled'=> false,
+                ),
+            ),
+        ),
 
         'preload'      => array('log'),
         'cache'        => array(

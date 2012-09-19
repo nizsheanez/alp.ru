@@ -148,6 +148,7 @@ public $roles;
         $criteria->compare($alias . '.state', $this->state, true);
         $criteria->compare($alias . '.date', $this->date, true);
         $criteria->compare($alias . '.date_create', $this->date_create, true);
+        $criteria->order = $alias . '.date DESC';
 
         return new ActiveDataProvider(get_class($this), array(
             'criteria' => $criteria

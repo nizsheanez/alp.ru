@@ -76,9 +76,6 @@ class Gallery extends ActiveRecordModel
                 'title, is_published', 'required'
             ), array(
                 'meta_tags, roles, date', 'safe',
-                'on' => array(
-                    self::SCENARIO_CREATE, self::SCENARIO_UPDATE
-                )
             ), array(
                 'title', 'length',
                 'max' => 250

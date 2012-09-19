@@ -19,7 +19,7 @@ class NewsController extends BaseController
         $this->sidebar_top_title = $model->sidebar_top_title;
 
         $this->render('view', array(
-            'model'      => $this->loadModel($id, array('active'))
+            'model'      => $this->loadModel($id, array('last', 'active'))
         ));
     }
 

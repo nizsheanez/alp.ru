@@ -35,11 +35,12 @@ class FJuiDatePicker extends CJuiDatePicker
     
     public function init() {
         parent::init();
-        $this->options = CMap::mergeArray(array(
-                'dateFormat'=>Yii::app()->getLocale()->getDateFormat('short'),
-                'changeMonth'=>true,
-                'changeYear'=>true,
-        ), $this->options);
+        $this->options = CMap::mergeArray($this->options, array(
+            'dateFormat'=>'dd.mm.yy',
+            'changeMonth'=>true,
+            'changeYear'=>true,
+            'showMonthAfterYear'=>false
+        ));
     }
     
     public function run()
