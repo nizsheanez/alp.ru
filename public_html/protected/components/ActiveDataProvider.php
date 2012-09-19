@@ -28,20 +28,7 @@ class ActiveDataProvider extends CActiveDataProvider
             $config['pagination']['pageSize'] = $page_size;
         }
 
-        parent::__construct($modelClass, $config);
-    }
-
-    public function getCriteria()
-    {
-        $criteria = parent::getCriteria();
-        $meta  = CActiveRecord::model($this->modelClass)->meta();
-
-//        if (isset($meta['lang']))
-//        {
-//            $criteria->addCondition("lang = '" . Yii::app()->language . "'");
-//        }
-
-        return $criteria;
+        parent::__construct($model, $config);
     }
 
 }
