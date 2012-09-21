@@ -20,6 +20,7 @@ class CategoryController extends BaseController
         $this->setMetaTags($page);
         $this->sidebar_top = $page->sidebar_top;
         $this->sidebar_top_title = $page->sidebar_top_title;
+        $this->cur_link = 'service';
 
         $this->render('service', array('html' => Category::getHtmlTree()));
     }
@@ -52,6 +53,11 @@ class CategoryController extends BaseController
         $this->page_title = $page->title;
 
 
+        $page = Page::model()->findByAttributes(array('url'=>'prices'));
+        $this->page_title = $page->title;
+        $this->setMetaTags($page);
+
+
         $this->cur_chapter = $model->alias;
 
         $this->render('price', array(
@@ -68,6 +74,8 @@ class CategoryController extends BaseController
         $this->cur_chapter = $model->alias;
         $this->sidebar_top = $model->sidebar_top;
         $this->sidebar_top_title = $model->sidebar_top_title;
+
+        $this->cur_link = 'service';
 
         $this->render('view', array(
             'model' => $category

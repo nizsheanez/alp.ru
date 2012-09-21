@@ -18,8 +18,8 @@
     $cs->registerScriptFile('/js/site/scripts.js');
     ?>
 </head>
-<!--<body oncontextmenu="return false" oncopy="return false" ondragstart="return false">-->
-<body>
+<body oncontextmenu="return false" oncopy="return false" ondragstart="return false">
+<!--<body>-->
 
 <div class="container main">
     <div class="header">
@@ -71,7 +71,7 @@
             <div class="divider-short"></div>
             <div class="sidebar-content">
                 <?php
-                foreach (News::model()->last()->limit(3)->findAll() as $model)
+                foreach (News::model()->last()->limit(5)->findAll() as $model)
                 {
                     $title = $model->title . ' |' ;
                     echo CHtml::tag('h5', array('class' => 'news-title'), $title);
