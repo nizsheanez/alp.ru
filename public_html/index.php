@@ -5,6 +5,14 @@ if (ini_get('short_open_tag') != '1')
     die;
 }
 ?><?
+$expires = 60*60*24;
+$time1 = gmdate('D, d M Y H:i:s', time() - $expires);
+$time2 = gmdate('D, d M Y H:i:s', time() + $expires);
+header("Pragma: public");
+header("Cache-Control: maxage=".$expires);
+header('Expires: ' . $time2 . ' GMT');
+header('Last-Modified: '. $time1 .' GMT');
+
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 ini_set('xdebug.max_nesting_level', 1000);

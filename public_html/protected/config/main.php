@@ -171,13 +171,13 @@ return array(
                     // внизу страницы)
                     'class'  => 'CProfileLogRoute',
                     'levels' => 'profile',
-                    'enabled'=> true,
+                    'enabled'=> false,
                 ),
                 array(
                     'class'      => 'CWebLogRoute',
                     'categories' => 'application',
                     'levels'     => 'error, warning, trace, profile, info',
-                    'enabled'=> true,
+                    'enabled'=> false,
                 ),
             ),
         ),
