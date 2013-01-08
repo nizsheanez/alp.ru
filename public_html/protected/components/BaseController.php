@@ -24,7 +24,18 @@ abstract class BaseController extends CController
 
     abstract public static function actionsTitles();
 
-
+/*
+    public function filters()
+    {
+        return array(
+            array(
+                'COutputCache',
+                'duration' => 60,
+            ),
+        );
+    }
+/**/
+    
     public function init()
     {
         parent::init();

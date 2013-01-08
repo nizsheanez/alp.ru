@@ -31,4 +31,17 @@ class ActiveDataProvider extends CActiveDataProvider
         parent::__construct($model, $config);
     }
 
+    public function getCriteria()
+    {
+        $criteria = parent::getCriteria();
+        $meta  = CActiveRecord::model($this->modelClass)->meta();
+
+//        if (isset($meta['lang']))
+//        {
+//            $criteria->addCondition("lang = '" . Yii::app()->language . "'");
+//        }
+
+        return $criteria;
+    }
+
 }

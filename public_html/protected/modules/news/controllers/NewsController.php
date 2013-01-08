@@ -27,7 +27,6 @@ class NewsController extends BaseController
     public function actionIndex()
     {
         $page = Page::model()->findByAttributes(array('url'=>'news'));
-        $this->page_title = $page->title;
         $this->setMetaTags($page);
         $this->sidebar_top = $page->sidebar_top;
         $this->sidebar_top_title = $page->sidebar_top_title;

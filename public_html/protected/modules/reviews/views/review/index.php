@@ -7,6 +7,7 @@
         'enablePagination' => true,
         'summaryText'      => false,
         'ajaxUpdate'       => false,
+        'pagerCssClass' => 'pager clr',
         'pager'            => array(
             'class'   => 'YearPager',
         )

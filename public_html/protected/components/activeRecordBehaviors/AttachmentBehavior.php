@@ -6,7 +6,7 @@ class AttachmentBehavior extends CActiveRecordBehavior
 
     private function _tmpPrefix()
     {
-        return 'tmp_' . $this->attached_model . '_' . Yii::app()->user->id;
+        return 'tmp_' . Yii::app()->user->id;
     }
 
     public function findAllAttaches()

@@ -24,6 +24,7 @@ $(function()
 </script>
 
 
+
 <?php $class = get_class($this->model); ?>
 
 <a href="" id="meta_tags_l">Мета-тэги</a>

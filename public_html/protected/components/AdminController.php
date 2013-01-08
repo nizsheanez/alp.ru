@@ -19,6 +19,10 @@ abstract class AdminController extends BaseController
         //$this->initAssets();
     }
 
+    public function filters()
+    {
+        return array();
+    }
 
     private function initTabs()
     {

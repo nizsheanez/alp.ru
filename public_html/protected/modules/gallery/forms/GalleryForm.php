@@ -18,6 +18,9 @@ return array(
             'title'     => 'Фотографии',
             'tag'       => 'files'
         ),
+        'is_published' => array(
+            'type' => 'checkbox'
+        ),
 //        'meta'  => array(
 //            'type'   => 'widget',
 //            'widget' => 'MetaTagSubForm'

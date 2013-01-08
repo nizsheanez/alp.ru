@@ -15,7 +15,7 @@ if (isset($module_name))
 {
     $this->page_title.= " :: {$module_name}";
 }
-Yii::
+
 $this->widget('AdminGrid', array(
 	'id' => 'settings-grid',
 	'dataProvider' => $model->search(isset($module_id) ? $module_id : null),

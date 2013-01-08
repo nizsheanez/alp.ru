@@ -42,6 +42,10 @@ class YearPager extends CLinkPager
         {
             $label = 'Фотографии за '.$label.' год';
         }
+        elseif($this->pages->model instanceof Review)
+        {
+            $label = 'Отзывы за '.$label.' год';
+        }
         return '<li class="'.$class.'">'.CHtml::link($label,$this->createPageUrl($page)).'</li>';
     }
 }
